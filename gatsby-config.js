@@ -6,7 +6,12 @@
  *
  */
 
-module.exports = {
+ module.exports = {
+  siteMetadata: {
+    title: `3DMakerNow`,
+    description: `Web especializada en impresión 3D.`,
+    author: `Alberto Dominguez Martin`
+  },
   /**
    * Adding plugins to this array adds them to your Gatsby site.
    *
@@ -26,9 +31,13 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        url:
-          process.env.WPGRAPHQL_URL ||
-          `https://wpgatsbydemo.wpengine.com/graphql`,
+        url: process.env.WPGRAPHQL_URL || `http://cakeit.local/graphql`,
+        schema: {
+          perPage: 20, // currently set to 100
+          requestConcurrency: 5, // currently set to 15
+          previewRequestConcurrency: 2, // currently set to 5
+          timeout: 999999
+        }
       },
     },
 
@@ -42,7 +51,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `assets`,
-        path: `${__dirname}/content/assets`,
+        path: `${__dirname}/src/images`,
       },
     },
 
@@ -53,7 +62,7 @@ module.exports = {
      */
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-
+    `gatsby-plugin-image`,
     {
       // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest
       resolve: `gatsby-plugin-manifest`,
@@ -64,12 +73,24 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `src/images/gatsby-icon.png`,
       },
     },
 
     // See https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/?=gatsby-plugin-react-helmet
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Teko\:200,400,500,600,700`,
+          `roboto\:300,400,500,700`,
+          `open sans\:300,400,500,700`,
+        ],
+        display: 'swap'
+      }
+    }
 
     /**
      * this (optional) plugin enables Progressive Web App + Offline functionality
