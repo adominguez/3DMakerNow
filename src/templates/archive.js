@@ -31,7 +31,7 @@ const archiveTemplate = ({
     <Wrapper>
       <BreadCrumb
         parent={{
-          uri: "/blog/all-posts/",
+          uri: "/all-posts/",
           title: "blog",
         }}
       />
@@ -41,7 +41,7 @@ const archiveTemplate = ({
           <h1 dangerouslySetInnerHTML={{ __html: catName }} />
           {allWpPost.edges.map(post => (
             <article key={post.node.id} className="entry-content">
-              <Link to={`/blog${post.node.uri}`}>
+              <Link to={`${post.node.uri}`}>
                 <StyledH2
                   dangerouslySetInnerHTML={{ __html: post.node.title }}
                 />
@@ -50,7 +50,7 @@ const archiveTemplate = ({
                 dangerouslySetInnerHTML={{ __html: post.node.date }}
               />
               <p dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
-              <StyledReadMore to={`/blog${post.node.uri}`}>
+              <StyledReadMore to={`${post.node.uri}`}>
                 Read More
               </StyledReadMore>
               <div className="dot-divider" />
