@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react"
 import Img from "gatsby-image"
-import { useHeroQuery } from '../../hooks/useHeroQuery';
-import { Wrapper, HeaderWrapper } from './Hero.styles';
+import { useHeroQuery } from "../../hooks/useHeroQuery"
+import { Wrapper, HeaderWrapper } from "./Hero.styles"
 
 const Hero = () => {
-  const { wpPage: { ACF_HomePage: data } } = useHeroQuery();
-  const image = data.heroImage.localFile.childImageSharp.fluid;
+  const {
+    wpPage: { ACF_HomePage: data },
+  } = useHeroQuery()
+  const image = data.heroImage.localFile.childImageSharp.fluid
   return (
     <Wrapper>
       <Img fluid={image} />
@@ -16,4 +18,4 @@ const Hero = () => {
   )
 }
 
-export default Hero;
+export default Hero

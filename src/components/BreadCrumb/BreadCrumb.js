@@ -1,6 +1,6 @@
-import React from 'react';
-import { Wrapper } from './BreadCrumb.styles';
-import { Link } from 'gatsby'
+import React from "react"
+import { Wrapper } from "./BreadCrumb.styles"
+import { Link } from "gatsby"
 
 const BreadCrumb = ({ parent }) => {
   return (
@@ -9,16 +9,14 @@ const BreadCrumb = ({ parent }) => {
         <span>Home</span>
       </Link>
       <span className="divider">/</span>
-      {
-        parent ? (
-          <>
-            <Link to={parent.uri}>
-              <span dangerouslySetInnerHTML={{__html: parent.title}} />
-            </Link>
-            <span className="divider">/</span>
-          </>
-        ) : null
-      }
+      {parent ? (
+        <>
+          <Link to={parent.uri}>
+            <span dangerouslySetInnerHTML={{ __html: parent.title }} />
+          </Link>
+          <span className="divider">/</span>
+        </>
+      ) : null}
     </Wrapper>
   )
 }

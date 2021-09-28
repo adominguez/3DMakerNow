@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 
@@ -23,7 +23,7 @@ const PostContent = styled.article`
   margin-top: 20px;
 `
 
-const PostTemplate = ({data}) => (
+const PostTemplate = ({ data }) => (
   <Layout>
     <Wrapper>
       <BreadCrumb

@@ -1,12 +1,12 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const Overlay = styled.div`
   width: 100%;
   height: 100%;
   position: fixed;
-  opacity: ${props => (props.menuOpen ? '1' : '0')};
+  opacity: ${props => (props.menuOpen ? "1" : "0")};
   transform: ${props =>
-    props.menuOpen ? 'translateX(0%)' : 'translateX(-100%)'};
+    props.menuOpen ? "translateX(0%)" : "translateX(-100%)"};
   z-index: 100000;
   background: #fff;
   left: 0px;
@@ -43,7 +43,7 @@ export const Overlay = styled.div`
       }
 
       a {
-        font-family: 'Teko', Arial, Helvetica, sans-serif;
+        font-family: "Teko", Arial, Helvetica, sans-serif;
         font-size: 2rem;
         color: #fff;
         transition: all 0.3s ease;
@@ -71,4 +71,4 @@ export const Overlay = styled.div`
       transform: rotate(180deg);
     }
   }
-`;
+`

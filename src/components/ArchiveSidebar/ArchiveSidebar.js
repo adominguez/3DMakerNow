@@ -20,19 +20,19 @@ const ArchiveSidebar = ({ catId, categories }) => {
 
         {sortedCategories.map(cat => {
           if (cat.node.count !== 0) {
-            return cat.node.slug !== 'uncategorized' ? (
+            return cat.node.slug !== "uncategorized" ? (
               <li key={cat.node.id}>
                 <span className="count">{cat.node.count}</span>
                 <Link
                   to={`${cat.node.uri}`}
                   activeClassName="sidebar-highlighted"
                 >
-                 <span dangerouslySetInnerHTML={{ __html: cat.node.name }} />   
+                  <span dangerouslySetInnerHTML={{ __html: cat.node.name }} />
                 </Link>
               </li>
             ) : null
           }
-          return null;
+          return null
         })}
       </Menu>
     </Wrapper>

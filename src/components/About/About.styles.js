@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const AboutWrapper = styled.div`
   display: grid;
@@ -19,11 +19,11 @@ export const AboutWrapper = styled.div`
       padding: 20px;
     }
   }
-`;
+`
 
 export const AboutImage = styled.div`
   background-image: ${({ image }) => `url(${image})`};
   background-size: cover;
   background-position: center;
   min-height: 300px;
-`;
+`

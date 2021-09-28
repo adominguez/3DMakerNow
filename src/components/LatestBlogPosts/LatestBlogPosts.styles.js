@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const Wrapper = styled.div`
   max-width: 1180px;
@@ -9,4 +9,4 @@ export const Wrapper = styled.div`
   padding-top: 40px;
   border-top: 1px solid #ddd;
   text-align: center;
-`;
+`

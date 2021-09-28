@@ -1,10 +1,10 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import styled from 'styled-components';
-import Layout from '../components/Layout/Layout';
-import PageHero from '../components/PageHero/PageHero';
-import BreadCrumb from '../components/BreadCrumb/BreadCrumb';
-import PageSidebar from '../components/PageSidebar/PageSidebar';
+import React from "react"
+import { graphql } from "gatsby"
+import styled from "styled-components"
+import Layout from "../components/Layout/Layout"
+import PageHero from "../components/PageHero/PageHero"
+import BreadCrumb from "../components/BreadCrumb/BreadCrumb"
+import PageSidebar from "../components/PageSidebar/PageSidebar"
 
 const Wrapper = styled.div`
   max-width: 1180px;
@@ -27,13 +27,16 @@ const PageContent = styled.article`
 const PageTemplate = ({ data }) => {
   return (
     <Layout>
-      {
-        data.wpPage.featuredImage ?
-          <PageHero img={data.wpPage.featuredImage.node.localFile.childImageSharp.fluid} alt={data.wpPage.title} />
-        : null
-      }
+      {data.wpPage.featuredImage ? (
+        <PageHero
+          img={data.wpPage.featuredImage.node.localFile.childImageSharp.fluid}
+          alt={data.wpPage.title}
+        />
+      ) : null}
       <Wrapper>
-        <BreadCrumb parent={data.wpPage.wpParent && data.wpPage.wpParent.node} />
+        <BreadCrumb
+          parent={data.wpPage.wpParent && data.wpPage.wpParent.node}
+        />
         <ContentWrapper>
           <PageSidebar
             parentChildren={
@@ -54,11 +57,11 @@ const PageTemplate = ({ data }) => {
   )
 }
 
-export default PageTemplate;
+export default PageTemplate
 
 export const pageQuery = graphql`
   query($id: String!) {
-    wpPage(id: {eq: $id}) {
+    wpPage(id: { eq: $id }) {
       id
       title
       content
@@ -104,4 +107,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

@@ -1,21 +1,25 @@
-import React from 'react';
-import { useCTAAreaQuery } from '../../hooks/useCTAAreaQuery';
-import CTA from '../CTA/CTA';
-import { Wrapper } from './CTAArea.styles';
+import React from "react"
+import { useCTAAreaQuery } from "../../hooks/useCTAAreaQuery"
+import CTA from "../CTA/CTA"
+import { Wrapper } from "./CTAArea.styles"
 
 const CTAArea = () => {
-  const { cta } = useCTAAreaQuery();
+  const { cta } = useCTAAreaQuery()
   return (
     <Wrapper>
-      {new Array(3).fill('').map((element, index) => (
-        <CTA key={index}
-          img={cta.ACF_HomePage[`cta${index + 1}Image`].localFile.childImageSharp.fluid}
+      {new Array(3).fill("").map((element, index) => (
+        <CTA
+          key={index}
+          img={
+            cta.ACF_HomePage[`cta${index + 1}Image`].localFile.childImageSharp
+              .fluid
+          }
           link={cta.ACF_HomePage[`cta${index + 1}Link`]}
           text={cta.ACF_HomePage[`cta${index + 1}Text`]}
         />
       ))}
     </Wrapper>
-  );
+  )
 }
 
-export default CTAArea;
+export default CTAArea

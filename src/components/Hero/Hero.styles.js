@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import GatsbyImage from "gatsby-image";
+import styled from "styled-components"
+import GatsbyImage from "gatsby-image"
 
 export const StyledImg = styled(GatsbyImage)`
   max-height: 600px;

@@ -6,11 +6,11 @@
  *
  */
 
- module.exports = {
+module.exports = {
   siteMetadata: {
     title: `3DMakerNow`,
     description: `Web especializada en impresión 3D.`,
-    author: `Alberto Dominguez Martin`
+    author: `Alberto Dominguez Martin`,
   },
   /**
    * Adding plugins to this array adds them to your Gatsby site.
@@ -36,8 +36,8 @@
           perPage: 20, // currently set to 100
           requestConcurrency: 5, // currently set to 15
           previewRequestConcurrency: 2, // currently set to 5
-          timeout: 999999
-        }
+          timeout: 999999,
+        },
       },
     },
 
@@ -88,9 +88,9 @@
           `roboto\:300,400,500,700`,
           `open sans\:300,400,500,700`,
         ],
-        display: 'swap'
-      }
-    }
+        display: "swap",
+      },
+    },
 
     /**
      * this (optional) plugin enables Progressive Web App + Offline functionality

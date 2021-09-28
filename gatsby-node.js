@@ -1,7 +1,7 @@
 const path = require("path")
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions;
+  const { createPage } = actions
   const archiveTemplate = path.resolve("./src/templates/archive.js")
 
   const result = await graphql(`
@@ -60,6 +60,5 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         })
       })
     }
-  });
-
+  })
 }

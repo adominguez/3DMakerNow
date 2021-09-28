@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby"
 
 export const useCTAAreaQuery = () => {
   const data = useStaticQuery(graphql`
@@ -12,7 +12,7 @@ export const useCTAAreaQuery = () => {
       }
     }
     query CTAAreaQuery {
-      cta: wpPage(databaseId: {eq: 47}) {
+      cta: wpPage(databaseId: { eq: 47 }) {
         ACF_HomePage {
           cta3Link
           cta3Text
@@ -28,13 +28,13 @@ export const useCTAAreaQuery = () => {
             altText
             ...ctaImage
           }
-                cta3Image {
+          cta3Image {
             altText
             ...ctaImage
           }
         }
       }
     }
-    `);
-  return data;
-};
+  `)
+  return data
+}
