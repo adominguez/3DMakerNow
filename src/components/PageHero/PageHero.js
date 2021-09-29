@@ -1,8 +1,8 @@
 import React from "react"
-import Img from "gatsby-image"
+import { StyledImg } from "./PageHero.styles"
 
 const PageHero = ({ img, alt }) => (
-  <Img fluid={img} style={{ maxHeight: "250px" }} alt={alt} />
+  <StyledImg image={img} alt={alt} />
 )
 
 export default PageHero

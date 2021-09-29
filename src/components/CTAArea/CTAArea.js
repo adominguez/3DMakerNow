@@ -11,8 +11,7 @@ const CTAArea = () => {
         <CTA
           key={index}
           img={
-            cta.ACF_HomePage[`cta${index + 1}Image`].localFile.childImageSharp
-              .fluid
+            cta.ACF_HomePage[`cta${index + 1}Image`].localFile.childImageSharp.gatsbyImageData
           }
           link={cta.ACF_HomePage[`cta${index + 1}Link`]}
           text={cta.ACF_HomePage[`cta${index + 1}Text`]}

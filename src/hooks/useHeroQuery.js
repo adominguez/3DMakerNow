@@ -10,9 +10,7 @@ export const useHeroQuery = () => {
           heroImage {
             localFile {
               childImageSharp {
-                fluid(maxWidth: 1920) {
-                  ...GatsbyImageSharpFluid_noBase64
-                }
+                gatsbyImageData(width: 1920, placeholder: TRACED_SVG)
               }
             }
           }

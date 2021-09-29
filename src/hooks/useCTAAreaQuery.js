@@ -5,9 +5,7 @@ export const useCTAAreaQuery = () => {
     fragment ctaImage on WpMediaItem {
       localFile {
         childImageSharp {
-          fluid(maxWidth: 720) {
-            ...GatsbyImageSharpFluid_noBase64
-          }
+          gatsbyImageData(width: 720, placeholder: TRACED_SVG)
         }
       }
     }

@@ -1,12 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
-import { CTAImage, CTAImageTextWrapper, CTAImageText } from "./CTA.styles"
+import { StyledImg, CTAImage, CTAImageTextWrapper, CTAImageText } from "./CTA.styles"
 
 const CTA = ({ img, link, text }) => {
   return (
     <CTAImage>
-      <Img fluid={img} />
+      <StyledImg image={img} alt="CTA image" />
       <Link to={link}>
         <CTAImageTextWrapper>
           <CTAImageText>{text}</CTAImageText>
