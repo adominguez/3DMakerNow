@@ -1,9 +1,10 @@
 import styled from "styled-components"
+import { colors } from '../../theme/colors'
 
 export const NavigationWrapper = styled.nav`
   font-family: "Teko", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
-  color: #212121;
+  color: ${colors.secondary};
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 1px;
@@ -20,6 +21,10 @@ export const NavigationWrapper = styled.nav`
 
   @media (min-width: 1200px) {
     font-size: 1rem;
+  }
+
+  ul {
+    margin-bottom: 0;
   }
 
   ul li {
@@ -51,7 +56,7 @@ export const NavigationWrapper = styled.nav`
   }
 
   ul li a:hover {
-    color: #ee2562;
+    color: ${colors.primary};
   }
 
   ul ul {

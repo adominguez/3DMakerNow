@@ -1,12 +1,13 @@
-import styled from "styled-components"
+import styled from "styled-components";
+import { colors } from '../../theme/colors'
 
 export const Wrapper = styled.header`
-  background: #fdf3fa;
-  height: 110px;
-  border-bottom: 1px solid #e7e7e7;
-  position: fixed;
+  background: ${colors.white};
+  border-bottom: 1px solid ${colors.blueGrayLight};
+  position: sticky;
   width: 100%;
-  z-index: 10000;
+  z-index: 1;
+  top: 0;
 `
 
 export const Content = styled.div`
