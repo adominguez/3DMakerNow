@@ -67,7 +67,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/apple-touch-icon.png`,
       },
     },
 
@@ -78,6 +78,9 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
+          `Archivo Narrow\:200,400,500,600,700`,
+          `Fira Sans\:200,400,500,600,700`,
+          `Pompiere\:200,400,500,600,700`,
           `Teko\:200,400,500,600,700`,
           `roboto\:300,400,500,700`,
           `open sans\:300,400,500,700`,

@@ -1,13 +1,13 @@
 import styled, { createGlobalStyle } from "styled-components"
+import { colors } from '../../theme/colors'
 
 export const Primary = styled.main`
-  padding: 110px 0 0 0;
-`
+`;
 
 export const GlobalStyles = createGlobalStyle`
 {
   html {
-    font-family: 'arial', sans-serif;
+    font-family: 'Archivo Narrow', sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
   }
@@ -18,7 +18,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .whiteText {
-    color: #fff;
+    color: ${colors.white};
   }
 
   h2,
@@ -75,14 +75,14 @@ export const GlobalStyles = createGlobalStyle`
     font-style: italic;
   }
   h1 {
-    font-family: 'Teko', Arial, Helvetica, sans-serif;
+    font-family: 'Fira Sans', Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-size: 2em;
     margin: 0.67em 0;
   }
   mark {
-    background-color: #ff0;
-    color: #000;
+    background-color: ${colors.primaryLight};
+    color: ${colors.blueGrayDark};
   }
   small {
     font-size: 80%;
@@ -239,21 +239,21 @@ export const GlobalStyles = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: #000;
+    color: ${colors.secondary};
   }
 
   p {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Archivo Narrow', Helvetica, sans-serif;
     font-size: 1.1rem;
     line-height: 1.7rem;
   }
 
   h1 {
     font-size: 2.2rem;
-    font-family: 'Teko', Arial;
+    font-family: 'Fira Sans', Arial;
     font-weight: 800;
     letter-spacing: 1px;
-    color: #282828;
+    color: ${colors.secondary};
     text-transform: uppercase;
     line-height: 40px;
     margin-top: 10px;
@@ -268,7 +268,7 @@ export const GlobalStyles = createGlobalStyle`
     padding-top: 0;
     margin-bottom: 1.45rem;
     color: inherit;
-    font-family: 'Teko', Arial, Helvetica Neue, sans-serif;
+    font-family: 'Fira Sans', Arial, Helvetica Neue, sans-serif;
     font-weight: bold;
     text-rendering: optimizeLegibility;
     font-size: 1.62671rem;
@@ -284,8 +284,7 @@ export const GlobalStyles = createGlobalStyle`
     padding-top: 0;
     margin-bottom: 1.45rem;
     color: inherit;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: 'Fira Sans', Arial, Helvetica Neue, sans-serif;
     font-weight: bold;
     text-rendering: optimizeLegibility;
     font-size: 1.38316rem;
@@ -298,20 +297,20 @@ export const GlobalStyles = createGlobalStyle`
     letter-spacing: 1px;
   }
   h5 {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Archivo Narrow', sans-serif;
     font-size: 1rem;
     font-style: normal;
     font-variant: normal;
     font-weight: 200;
     letter-spacing: 1px;
     margin-bottom: 10px;
-    color: #000;
+    color: ${colors.secondaryDark};
     text-transform: uppercase;
   }
   h6 {
-    font-family: 'Times New Roman';
+    font-family: 'Archivo Narrow', sans-serif;
     font-size: 28px;
-    color: #fff;
+    color: ${colors.white};
     font-style: italic;
     margin: 40px 20% 20px 20%;
     line-height: 35px;
