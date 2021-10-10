@@ -18,12 +18,25 @@ export const Content = styled.div`
   max-width: 1180px;
   margin: 0 auto;
   padding: 0 20px;
-  @media (max-width: 768px) {
-    padding: 0 10px;
-  }
-  img {
+  .logo {
     width: 200px;
     margin: 0;
-    padding: 12px 0 0 0;
+    padding: 6px 0;
+    display: block;
+  }
+  .logo-mobile {
+    width: 60px;
+    padding: 6px 0;
+    display: none;
+    margin: 0;
+  }
+  @media (max-width: 768px) {
+    padding: 0 10px;
+    .logo {
+      display: none;
+    }
+    .logo-mobile {
+      display: block;
+    }
   }
 `
