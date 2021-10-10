@@ -5,10 +5,10 @@ export const HamburgerButton = styled.div`
     position: fixed;
     display: block;
     z-index: 100000;
-    right: 30px;
-    top: 35px;
-    width: 40px;
-    height: 40px;
+    right: 10px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     transition: all 0.2s ease;
 
@@ -16,7 +16,7 @@ export const HamburgerButton = styled.div`
       transform: scale(1.2);
     }
 
-    @media (min-width: 992px) {
+    @media (min-width: 768px) {
       display: none;
     }
   }

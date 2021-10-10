@@ -15,6 +15,9 @@ export const Wrapper = styled.div`
     color: ${colors.white};
     display: flex;
     justify-content: space-between;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
   
   .wrapper-content .content {

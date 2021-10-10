@@ -14,7 +14,7 @@ export const NavigationWrapper = styled.nav`
     color: #ee2562;
   }
 
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     font-size: 0.85rem;
     display: block;
   }

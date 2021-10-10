@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { colors } from '../../theme/colors'
 
 export const Overlay = styled.div`
   width: 100%;
@@ -8,7 +9,7 @@ export const Overlay = styled.div`
   transform: ${props =>
     props.menuOpen ? 'translateX(0%)' : 'translateX(-100%)'};
   z-index: 100000;
-  background: #fff;
+  background: ${colors.white};
   left: 0px;
   padding: 20px;
   transition: all 0.3s ease;
@@ -18,11 +19,11 @@ export const Overlay = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #000;
+    background: ${colors.secondaryDark};
     width: 100%;
     height: 100%;
     color: #fff;
-    padding: 40px;
+    padding: 20px;
 
     .invertedLogo {
       max-width: 200px;
@@ -50,7 +51,7 @@ export const Overlay = styled.div`
         text-decoration: none;
 
         :hover {
-          color: #ee2562;
+          color: ${colors.primary}
         }
       }
     }
@@ -64,11 +65,20 @@ export const Overlay = styled.div`
     width: 30px;
     height: 30px;
     cursor: pointer;
-    transition: all 1s ease;
+    transition: transform 1s ease;
     outline: none;
+    background: transparent;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
 
     :hover {
       transform: rotate(180deg);
+    }
+    img {
+      margin-bottom: 0;
     }
   }
 `
