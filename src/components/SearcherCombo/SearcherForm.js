@@ -5,11 +5,10 @@ import { products, searcherComboTexts, printersTypes, filamentsTypes, filamentsC
 
 const PrinterForm = ({printerType, changePrinterType}) => (
   <>
-    <label htmlFor="printer" className="block p-2 text-primary-500">
+    <label htmlFor="printer">
       {searcherComboTexts.printerLabel}
     </label>
     <select
-      className="p-2 text-white bg-transparent border border-white rounded-md"
       name="printer"
       value={printerType}
       onChange={(event) => changePrinterType(event.currentTarget.value)}
@@ -25,11 +24,10 @@ const PrinterForm = ({printerType, changePrinterType}) => (
 
 const FilamentForm = ({filamentType, filamentColor, changeFilamentColor, changeFilamentType}) => (
   <>
-    <label htmlFor="filament" className="block p-2 text-primary-500">
+    <label htmlFor="filament">
       {searcherComboTexts.filamentLabel}
     </label>
     <select
-      className="p-2 text-white bg-transparent border border-white rounded-md"
       name="filament"
       value={filamentType}
       onChange={(event) => changeFilamentType(event.currentTarget.value)}
@@ -40,12 +38,11 @@ const FilamentForm = ({filamentType, filamentColor, changeFilamentColor, changeF
         </option>
       ))}
     </select>
-    <label htmlFor="filament" className="block p-2 text-primary-500">
+    <label htmlFor="filamentColor">
       {searcherComboTexts.filamentColorLabel}
     </label>
     <select
-      className="p-2 text-white bg-transparent border border-white rounded-md"
-      name="filament"
+      name="filamentColor"
       value={filamentColor}
       onChange={(event) => changeFilamentColor(event.currentTarget.value)}
     >
@@ -60,11 +57,10 @@ const FilamentForm = ({filamentType, filamentColor, changeFilamentColor, changeF
 
 const ResinaForm = ({resinColor, changeResinColor}) => (
   <>
-    <label htmlFor="resina" className="block p-2 text-primary-500">
+    <label htmlFor="resina">
       {searcherComboTexts.resinaLabel}
     </label>
     <select
-      className="p-2 text-white bg-transparent border border-white rounded-md"
       name="resina"
       value={resinColor}
       onChange={(event) => changeResinColor(event.currentTarget.value)}
@@ -78,13 +74,12 @@ const ResinaForm = ({resinColor, changeResinColor}) => (
   </>
 );
 
-const AccesoriosForm = (accesorio, changeAccesorio) => (
+const AccesoriosForm = ({accesorio, changeAccesorio}) => (
   <>
-    <label htmlFor="accesorios" className="block p-2 text-primary-500">
+    <label htmlFor="accesorios">
       {searcherComboTexts.accesoriosLabel}
     </label>
     <select
-      className="p-2 text-white bg-transparent border border-white rounded-md"
       name="accesorios"
       value={accesorio}
       onChange={(event) => changeAccesorio(event.currentTarget.value)}
@@ -100,11 +95,10 @@ const AccesoriosForm = (accesorio, changeAccesorio) => (
 
 const PostprocesadoForm = ({postprocesado, changePostprocesado}) => (
   <>
-    <label htmlFor="postprocesado" className="block p-2 text-primary-500">
+    <label htmlFor="postprocesado">
       {searcherComboTexts.postprocesadoLabel}
     </label>
     <select
-      className="p-2 text-white bg-transparent border border-white rounded-md"
       name="postprocesado"
       value={postprocesado}
       onChange={(event) => changePostprocesado(event.currentTarget.value)}
@@ -197,6 +191,10 @@ const SearcherForm = ({ handlerChangeProduct }) => {
     postprocesado,
   ])
 
+  useEffect(() => {
+    handlerChangeProduct(product);
+  }, [product, handlerChangeProduct])
+
   const changeProduct = (e) => {
     handlerChangeProduct(e.target.value);
     setProduct(e.target.value);
@@ -234,11 +232,10 @@ const SearcherForm = ({ handlerChangeProduct }) => {
 
   return (
     <Form>
-      <label htmlFor="product" className="block p-2 text-primary-500">
+      <label htmlFor="product">
         {searcherComboTexts.productLabel}
       </label>
       <select
-        className="p-2 text-white bg-transparent border border-white rounded-md"
         name="product"
         value={product}
         onChange={changeProduct}
