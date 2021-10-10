@@ -8,7 +8,7 @@ export const useSearcherCombo = () => {
           printerpostproduccion {
             localFile {
               childImageSharp {
-                gatsbyImageData(width: 450, placeholder: TRACED_SVG)
+                gatsbyImageData(width: 450, placeholder: NONE)
               }
             }
             altText
@@ -16,7 +16,7 @@ export const useSearcherCombo = () => {
           printeraccesories {
             localFile {
               childImageSharp {
-                gatsbyImageData(width: 450, placeholder: TRACED_SVG)
+                gatsbyImageData(width: 450, placeholder: NONE)
               }
             },
             altText
@@ -24,7 +24,7 @@ export const useSearcherCombo = () => {
           printerfilament {
             localFile {
               childImageSharp {
-                gatsbyImageData(width: 450, placeholder: TRACED_SVG)
+                gatsbyImageData(width: 450, placeholder: NONE)
               }
             }
             altText
@@ -32,7 +32,7 @@ export const useSearcherCombo = () => {
           printerselection {
             localFile {
               childImageSharp {
-                gatsbyImageData(width: 450, placeholder: TRACED_SVG)
+                gatsbyImageData(width: 450, placeholder: NONE)
               }
             }
             altText
@@ -40,7 +40,7 @@ export const useSearcherCombo = () => {
           printerresin {
             localFile {
               childImageSharp {
-                gatsbyImageData(width: 450, placeholder: TRACED_SVG)
+                gatsbyImageData(width: 450, placeholder: NONE)
               }
             }
             altText
