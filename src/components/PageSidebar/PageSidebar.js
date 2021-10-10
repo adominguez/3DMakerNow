@@ -1,8 +1,8 @@
-import React from "react"
-import { Link } from "gatsby"
-import SidebarMessage from "../SidebarMessage/SidebarMessage"
-import PageIcon from "../../images/page-icon.svg"
-import { Wrapper, Menu } from "./PageSidebar.styles"
+import React from 'react'
+import { Link } from 'gatsby'
+import SidebarMessage from '../SidebarMessage/SidebarMessage'
+import PageIcon from '../../images/page-icon.svg'
+import { Wrapper, Menu } from './PageSidebar.styles'
 
 const PageSidebar = ({ children, parentChildren, currentPage, parent }) => {
   const getParentContent = () => (

@@ -1,12 +1,12 @@
-import React from "react"
-import { Link } from "gatsby"
-import PageIcon from "../../images/page-icon.svg"
-import { Wrapper, Menu } from "./ArchiveSidebar.styles"
+import React from 'react'
+import { Link } from 'gatsby'
+import PageIcon from '../../images/page-icon.svg'
+import { Wrapper, Menu } from './ArchiveSidebar.styles'
 
 const ArchiveSidebar = ({ catId, categories }) => {
   const sortedCategories = [...categories].sort((x, y) => {
-    if (x.node.slug === "all-posts") return -1
-    if (y.node.slug === "all-posts") return 1
+    if (x.node.slug === 'all-posts') return -1
+    if (y.node.slug === 'all-posts') return 1
     return 0
   })
 
@@ -20,7 +20,7 @@ const ArchiveSidebar = ({ catId, categories }) => {
 
         {sortedCategories.map(cat => {
           if (cat.node.count !== 0) {
-            return cat.node.slug !== "uncategorized" ? (
+            return cat.node.slug !== 'uncategorized' ? (
               <li key={cat.node.id}>
                 <span className="count">{cat.node.count}</span>
                 <Link

@@ -1,9 +1,9 @@
-import React from "react"
-import { Link } from "gatsby"
-import InvertedLogo from "../../images/logo-inverted.svg"
-import CloseButton from "../../images/close-btn.svg"
-import { useMenuQuery } from "../../hooks/useMenuQuery"
-import { Overlay } from "./OverlayMenu.styles"
+import React from 'react'
+import { Link } from 'gatsby'
+import InvertedLogo from '../../images/logo-inverted.svg'
+import CloseButton from '../../images/close-btn.svg'
+import { useMenuQuery } from '../../hooks/useMenuQuery'
+import { Overlay } from './OverlayMenu.styles'
 
 const OverlayMenu = ({ menuOpen, callback }) => {
   const { wpMenu } = useMenuQuery()

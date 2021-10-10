@@ -1,8 +1,8 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 import { colors } from '../../theme/colors'
 
 export const NavigationWrapper = styled.nav`
-  font-family: "Teko", Arial, Helvetica, sans-serif;
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   color: ${colors.secondary};
   font-size: 1rem;

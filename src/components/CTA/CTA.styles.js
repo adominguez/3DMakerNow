@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { GatsbyImage } from "gatsby-plugin-image"
+import styled from 'styled-components'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 export const StyledImg = styled(GatsbyImage)`
   img {
@@ -38,7 +38,7 @@ export const CTAImageTextWrapper = styled.div`
 
 export const CTAImageText = styled.p`
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-  font-family: "Teko";
+  font-family: 'Teko';
   font-weight: 700;
   letter-spacing: 1.5px;
   font-size: 1.3rem;

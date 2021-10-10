@@ -1,17 +1,24 @@
-import React, {useState, useEffect} from 'react';
-import { Form } from './SearcherCombo.styles';
+import React, { useState, useEffect } from 'react'
+import { Form } from './SearcherCombo.styles'
 import { Link, withPrefix } from 'gatsby'
-import { products, searcherComboTexts, printersTypes, filamentsTypes, filamentsColor, resinsColor, accesorios, postprocesados } from '../../languages/es';
+import {
+  products,
+  searcherComboTexts,
+  printersTypes,
+  filamentsTypes,
+  filamentsColor,
+  resinsColor,
+  accesorios,
+  postprocesados,
+} from '../../languages/es'
 
-const PrinterForm = ({printerType, changePrinterType}) => (
+const PrinterForm = ({ printerType, changePrinterType }) => (
   <>
-    <label htmlFor="printer">
-      {searcherComboTexts.printerLabel}
-    </label>
+    <label htmlFor="printer">{searcherComboTexts.printerLabel}</label>
     <select
       name="printer"
       value={printerType}
-      onChange={(event) => changePrinterType(event.currentTarget.value)}
+      onChange={event => changePrinterType(event.currentTarget.value)}
     >
       {printersTypes.map((item, index) => (
         <option key={index} value={item}>
@@ -20,17 +27,20 @@ const PrinterForm = ({printerType, changePrinterType}) => (
       ))}
     </select>
   </>
-);
+)
 
-const FilamentForm = ({filamentType, filamentColor, changeFilamentColor, changeFilamentType}) => (
+const FilamentForm = ({
+  filamentType,
+  filamentColor,
+  changeFilamentColor,
+  changeFilamentType,
+}) => (
   <>
-    <label htmlFor="filament">
-      {searcherComboTexts.filamentLabel}
-    </label>
+    <label htmlFor="filament">{searcherComboTexts.filamentLabel}</label>
     <select
       name="filament"
       value={filamentType}
-      onChange={(event) => changeFilamentType(event.currentTarget.value)}
+      onChange={event => changeFilamentType(event.currentTarget.value)}
     >
       {filamentsTypes.map((item, index) => (
         <option key={index} value={item}>
@@ -44,7 +54,7 @@ const FilamentForm = ({filamentType, filamentColor, changeFilamentColor, changeF
     <select
       name="filamentColor"
       value={filamentColor}
-      onChange={(event) => changeFilamentColor(event.currentTarget.value)}
+      onChange={event => changeFilamentColor(event.currentTarget.value)}
     >
       {filamentsColor.map((item, index) => (
         <option key={index} value={item}>
@@ -53,17 +63,15 @@ const FilamentForm = ({filamentType, filamentColor, changeFilamentColor, changeF
       ))}
     </select>
   </>
-);
+)
 
-const ResinaForm = ({resinColor, changeResinColor}) => (
+const ResinaForm = ({ resinColor, changeResinColor }) => (
   <>
-    <label htmlFor="resina">
-      {searcherComboTexts.resinaLabel}
-    </label>
+    <label htmlFor="resina">{searcherComboTexts.resinaLabel}</label>
     <select
       name="resina"
       value={resinColor}
-      onChange={(event) => changeResinColor(event.currentTarget.value)}
+      onChange={event => changeResinColor(event.currentTarget.value)}
     >
       {resinsColor.map((item, index) => (
         <option key={index} value={item}>
@@ -72,17 +80,15 @@ const ResinaForm = ({resinColor, changeResinColor}) => (
       ))}
     </select>
   </>
-);
+)
 
-const AccesoriosForm = ({accesorio, changeAccesorio}) => (
+const AccesoriosForm = ({ accesorio, changeAccesorio }) => (
   <>
-    <label htmlFor="accesorios">
-      {searcherComboTexts.accesoriosLabel}
-    </label>
+    <label htmlFor="accesorios">{searcherComboTexts.accesoriosLabel}</label>
     <select
       name="accesorios"
       value={accesorio}
-      onChange={(event) => changeAccesorio(event.currentTarget.value)}
+      onChange={event => changeAccesorio(event.currentTarget.value)}
     >
       {accesorios.map((item, index) => (
         <option key={index} value={item}>
@@ -91,9 +97,9 @@ const AccesoriosForm = ({accesorio, changeAccesorio}) => (
       ))}
     </select>
   </>
-);
+)
 
-const PostprocesadoForm = ({postprocesado, changePostprocesado}) => (
+const PostprocesadoForm = ({ postprocesado, changePostprocesado }) => (
   <>
     <label htmlFor="postprocesado">
       {searcherComboTexts.postprocesadoLabel}
@@ -101,7 +107,7 @@ const PostprocesadoForm = ({postprocesado, changePostprocesado}) => (
     <select
       name="postprocesado"
       value={postprocesado}
-      onChange={(event) => changePostprocesado(event.currentTarget.value)}
+      onChange={event => changePostprocesado(event.currentTarget.value)}
     >
       {postprocesados.map((item, index) => (
         <option key={index} value={item}>
@@ -110,7 +116,7 @@ const PostprocesadoForm = ({postprocesado, changePostprocesado}) => (
       ))}
     </select>
   </>
-);
+)
 
 const SearcherForm = ({ handlerChangeProduct }) => {
   const {
@@ -126,13 +132,23 @@ const SearcherForm = ({ handlerChangeProduct }) => {
     sessionStorage.getItem('searcherCombo')
       ? JSON.parse(sessionStorage.getItem('searcherCombo'))
       : {}
-  const [product, setProduct] = useState(sessionProduct || products[0].value);
-  const [printerType, setPrinterType] = useState(sessionPrinterType || printersTypes[0])
-  const [filamentType, setFilamentType] = useState(sessionFilamentType || filamentsTypes[0])
-  const [filamentColor, setFilamentColor] = useState(sessionFilamentColor || filamentsColor[0])
-  const [resinColor, setResinColor] = useState(sessionResinColor || resinsColor[0])
+  const [product, setProduct] = useState(sessionProduct || products[0].value)
+  const [printerType, setPrinterType] = useState(
+    sessionPrinterType || printersTypes[0]
+  )
+  const [filamentType, setFilamentType] = useState(
+    sessionFilamentType || filamentsTypes[0]
+  )
+  const [filamentColor, setFilamentColor] = useState(
+    sessionFilamentColor || filamentsColor[0]
+  )
+  const [resinColor, setResinColor] = useState(
+    sessionResinColor || resinsColor[0]
+  )
   const [accesorio, setAccesorio] = useState(sessionAccesorio || accesorios[0])
-  const [postprocesado, setPostprocesado] = useState(sessionPostprocesado || postprocesados[0])
+  const [postprocesado, setPostprocesado] = useState(
+    sessionPostprocesado || postprocesados[0]
+  )
 
   useEffect(() => {
     if (product === products[0].value) {
@@ -192,12 +208,12 @@ const SearcherForm = ({ handlerChangeProduct }) => {
   ])
 
   useEffect(() => {
-    handlerChangeProduct(product);
+    handlerChangeProduct(product)
   }, [product, handlerChangeProduct])
 
-  const changeProduct = (e) => {
-    handlerChangeProduct(e.target.value);
-    setProduct(e.target.value);
+  const changeProduct = e => {
+    handlerChangeProduct(e.target.value)
+    setProduct(e.target.value)
   }
 
   const transformProduct = () => {
@@ -228,34 +244,50 @@ const SearcherForm = ({ handlerChangeProduct }) => {
     }
   }
 
-  const getUrl = () => `${withPrefix('/')}qp?s=${transformProduct().toLowerCase()}`;
+  const getUrl = () =>
+    `${withPrefix('/')}qp?s=${transformProduct().toLowerCase()}`
 
   return (
     <Form>
-      <label htmlFor="product">
-        {searcherComboTexts.productLabel}
-      </label>
-      <select
-        name="product"
-        value={product}
-        onChange={changeProduct}
-      >
-        {products.map(({value, text}) => (
+      <label htmlFor="product">{searcherComboTexts.productLabel}</label>
+      <select name="product" value={product} onChange={changeProduct}>
+        {products.map(({ value, text }) => (
           <option key={value} value={value}>
             {text}
           </option>
         ))}
       </select>
-      {product === products[0].value ? <PrinterForm printerType={printerType} changePrinterType={setPrinterType} /> : null}
-      {product === products[1].value ? <FilamentForm filamentType={filamentType} filamentColor={filamentColor} changeFilamentColor={setFilamentColor} changeFilamentType={setFilamentType} /> : null}
-      {product === products[2].value ? <ResinaForm resinColor={resinColor} changeResinColor={setResinColor} /> : null}
-      {product === products[3].value ? <AccesoriosForm accesorio={accesorio} changeAccesorio={setAccesorio} /> : null}
-      {product === products[4].value ? <PostprocesadoForm postprocesado={postprocesado} changePostprocesado={setPostprocesado} /> : null}
+      {product === products[0].value ? (
+        <PrinterForm
+          printerType={printerType}
+          changePrinterType={setPrinterType}
+        />
+      ) : null}
+      {product === products[1].value ? (
+        <FilamentForm
+          filamentType={filamentType}
+          filamentColor={filamentColor}
+          changeFilamentColor={setFilamentColor}
+          changeFilamentType={setFilamentType}
+        />
+      ) : null}
+      {product === products[2].value ? (
+        <ResinaForm resinColor={resinColor} changeResinColor={setResinColor} />
+      ) : null}
+      {product === products[3].value ? (
+        <AccesoriosForm accesorio={accesorio} changeAccesorio={setAccesorio} />
+      ) : null}
+      {product === products[4].value ? (
+        <PostprocesadoForm
+          postprocesado={postprocesado}
+          changePostprocesado={setPostprocesado}
+        />
+      ) : null}
       <Link to={getUrl()}>
-        Ver {products.find(({value}) => value === product).text}
+        Ver {products.find(({ value }) => value === product).text}
       </Link>
     </Form>
   )
 }
 
-export default SearcherForm;
+export default SearcherForm

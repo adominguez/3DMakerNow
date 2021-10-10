@@ -1,6 +1,11 @@
-import React from "react"
-import { Link } from "gatsby"
-import { StyledImg, CTAImage, CTAImageTextWrapper, CTAImageText } from "./CTA.styles"
+import React from 'react'
+import { Link } from 'gatsby'
+import {
+  StyledImg,
+  CTAImage,
+  CTAImageTextWrapper,
+  CTAImageText,
+} from './CTA.styles'
 
 const CTA = ({ img, link, text }) => {
   return (

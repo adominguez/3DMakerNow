@@ -1,8 +1,8 @@
-const path = require("path")
+const path = require('path')
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
-  const archiveTemplate = path.resolve("./src/templates/archive.js")
+  const archiveTemplate = path.resolve('./src/templates/archive.js')
 
   const result = await graphql(`
     {
@@ -41,7 +41,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     // Some categories may be empty and we don't want to create pages for them
     // Also don't want to create pages for uncategorized
-    if (numberOfPosts > 0 || category.node.name !== "uncategorized") {
+    if (numberOfPosts > 0 || category.node.name !== 'uncategorized') {
       Array.from({ length: numPages }).forEach((_, i) => {
         createPage({
           path:

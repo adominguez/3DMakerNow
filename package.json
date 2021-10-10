@@ -1,12 +1,9 @@
 {
-  "name": "gatsby-starter-wordpress-blog",
+  "name": "3dmakernow",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "3DMakernow web integred with wordpress",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com> and Tyler Barnes <tylerdbarnes@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "author": "Alberto Dominguez Martín",
   "dependencies": {
     "babel-plugin-styled-components": "^1.13.2",
     "gatsby": "^3.3.0",
@@ -36,15 +33,15 @@
     "dumper.js": "^1.3.1",
     "prettier": "2.2.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/adominguez/3DMakerNow#readme",
   "keywords": [
-    "gatsby"
+    "3d printer", "impresión 3D", "3d printing", "3d", "3dmakernow", "3dmakernow.com", "impresoras 3D", "filamento 3D"
   ],
   "license": "0BSD",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/adominguez/3DMakerNow.git"
   },
   "scripts": {
     "build": "gatsby build",

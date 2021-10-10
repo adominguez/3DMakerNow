@@ -1,11 +1,11 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 
-import Layout from "../components/Layout/Layout"
-import BreadCrumb from "../components/BreadCrumb/BreadCrumb"
-import ArchiveSidebar from "../components/ArchiveSidebar/ArchiveSidebar"
-import Pagination from "../components/Pagination/Pagination"
+import Layout from '../components/Layout/Layout'
+import BreadCrumb from '../components/BreadCrumb/BreadCrumb'
+import ArchiveSidebar from '../components/ArchiveSidebar/ArchiveSidebar'
+import Pagination from '../components/Pagination/Pagination'
 
 import {
   Wrapper,
@@ -14,7 +14,7 @@ import {
   StyledH2,
   StyledDate,
   StyledReadMore,
-} from "./archive.styles"
+} from './archive.styles'
 
 const archiveTemplate = ({
   data: { allWpPost },
@@ -31,8 +31,8 @@ const archiveTemplate = ({
     <Wrapper>
       <BreadCrumb
         parent={{
-          uri: "/all-posts/",
-          title: "blog",
+          uri: '/all-posts/',
+          title: 'blog',
         }}
       />
       <ContentWrapper>
@@ -50,9 +50,7 @@ const archiveTemplate = ({
                 dangerouslySetInnerHTML={{ __html: post.node.date }}
               />
               <p dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
-              <StyledReadMore to={`${post.node.uri}`}>
-                Read More
-              </StyledReadMore>
+              <StyledReadMore to={`${post.node.uri}`}>Read More</StyledReadMore>
               <div className="dot-divider" />
             </article>
           ))}

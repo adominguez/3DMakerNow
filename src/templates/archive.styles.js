@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { Link } from "gatsby"
+import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 export const Wrapper = styled.div`
   max-width: 1180px;
@@ -28,13 +28,13 @@ export const StyledH2 = styled.h2`
 `
 
 export const StyledDate = styled.div`
-  font-family: "Teko";
+  font-family: 'Teko';
   font-size: 1.1rem;
   font-weight: 600;
 `
 
 export const StyledReadMore = styled(Link)`
-  font-family: "Teko", Arial, Helvetica, sans-serif;
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: 800;
   color: #fff;
@@ -50,7 +50,7 @@ export const StyledReadMore = styled(Link)`
     left: 100%;
     top: 50%;
     border: solid transparent;
-    content: "";
+    content: '';
     height: 0;
     width: 0;
     position: absolute;

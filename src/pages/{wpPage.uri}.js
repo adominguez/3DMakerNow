@@ -1,10 +1,10 @@
-import React from "react"
-import { graphql } from "gatsby"
-import styled from "styled-components"
-import Layout from "../components/Layout/Layout"
-import PageHero from "../components/PageHero/PageHero"
-import BreadCrumb from "../components/BreadCrumb/BreadCrumb"
-import PageSidebar from "../components/PageSidebar/PageSidebar"
+import React from 'react'
+import { graphql } from 'gatsby'
+import styled from 'styled-components'
+import Layout from '../components/Layout/Layout'
+import PageHero from '../components/PageHero/PageHero'
+import BreadCrumb from '../components/BreadCrumb/BreadCrumb'
+import PageSidebar from '../components/PageSidebar/PageSidebar'
 
 const Wrapper = styled.div`
   max-width: 1180px;
@@ -30,7 +30,8 @@ const PageTemplate = ({ data }) => {
       {data.wpPage.featuredImage ? (
         <PageHero
           img={
-            data.wpPage.featuredImage.node.localFile.childImageSharp.gatsbyImageData
+            data.wpPage.featuredImage.node.localFile.childImageSharp
+              .gatsbyImageData
           }
           alt={data.wpPage.title}
         />

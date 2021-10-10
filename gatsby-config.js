@@ -85,7 +85,7 @@ module.exports = {
           `roboto\:300,400,500,700`,
           `open sans\:300,400,500,700`,
         ],
-        display: "swap",
+        display: 'swap',
       },
     },
 

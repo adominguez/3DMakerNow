@@ -1,8 +1,8 @@
-import React from "react"
-import { Link } from "gatsby"
-import useLatestBlogPosts from "../../hooks/useLatestBlogPosts"
-import { Wrapper } from "./LatestBlogPosts.styles"
-import Parser from "html-react-parser"
+import React from 'react'
+import { Link } from 'gatsby'
+import useLatestBlogPosts from '../../hooks/useLatestBlogPosts'
+import { Wrapper } from './LatestBlogPosts.styles'
+import Parser from 'html-react-parser'
 
 const LatestBlogPosts = props => {
   const data = useLatestBlogPosts()

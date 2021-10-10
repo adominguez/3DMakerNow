@@ -7,38 +7,43 @@ export const searcherComboTexts = {
   filamentColorLabel: '¿Qué color quieres?',
   resinaLabel: '¿Qué color quieres?',
   accesoriosLabel: '¿Qué accesorios estás buscando?',
-  postprocesadoLabel: '¿Qué postprocesado estás buscando?'
-};
+  postprocesadoLabel: '¿Qué postprocesado estás buscando?',
+}
 
 export const printyText = {
-  printerselection: 'Aquí verás una selección de las mejores impresoras 3D que puedes encontrar hoy en día en función de lo que necesites.',
-  printerfilament: 'Encuentra el filamento que estás buscando. Selecciona el color que más te guste y elige el que desees.',
-  printerresin: 'Si lo tuyo es la resina. Selecciona un color y encuentra la resina que más se ajuste a tus necesidades.',
-  printeraccesories: 'Si tienes problemas con tu impresora o quieres mejorarla, aquí podrás encontrar los accesorios y recambios más buscados.',
-  printerpostproduccion: 'Encuentra materiales y herramientas con las que podrás mejorar el acabado final de tus piezas.',
-};
+  printerselection:
+    'Aquí verás una selección de las mejores impresoras 3D que puedes encontrar hoy en día en función de lo que necesites.',
+  printerfilament:
+    'Encuentra el filamento que estás buscando. Selecciona el color que más te guste y elige el que desees.',
+  printerresin:
+    'Si lo tuyo es la resina. Selecciona un color y encuentra la resina que más se ajuste a tus necesidades.',
+  printeraccesories:
+    'Si tienes problemas con tu impresora o quieres mejorarla, aquí podrás encontrar los accesorios y recambios más buscados.',
+  printerpostproduccion:
+    'Encuentra materiales y herramientas con las que podrás mejorar el acabado final de tus piezas.',
+}
 
 export const products = [
   {
     value: 'printerselection',
-    text: 'Impresoras 3D'
+    text: 'Impresoras 3D',
   },
   {
     value: 'printerfilament',
-    text: 'Filamentos'
+    text: 'Filamentos',
   },
   {
     value: 'printerresin',
-    text : 'Resinas'
+    text: 'Resinas',
   },
   {
     value: 'printeraccesories',
-    text: 'Accesorios y recambios'
+    text: 'Accesorios y recambios',
   },
   {
     value: 'printerpostproduccion',
-    text: 'Postproducción'
-  }
+    text: 'Postproducción',
+  },
 ]
 
 export const printersTypes = [

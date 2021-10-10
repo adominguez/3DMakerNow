@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from 'gatsby'
 
 export const useSearcherCombo = () => {
   const data = useStaticQuery(graphql`
@@ -18,7 +18,7 @@ export const useSearcherCombo = () => {
               childImageSharp {
                 gatsbyImageData(width: 450, placeholder: NONE)
               }
-            },
+            }
             altText
           }
           printerfilament {

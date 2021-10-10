@@ -1,8 +1,7 @@
-import styled, { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle } from 'styled-components'
 import { colors } from '../../theme/colors'
 
-export const Primary = styled.main`
-`;
+export const Primary = styled.main``
 
 export const GlobalStyles = createGlobalStyle`
 {

@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { colors } from '../../theme/colors';
-import { GatsbyImage } from "gatsby-plugin-image";
+import styled from 'styled-components'
+import { colors } from '../../theme/colors'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 export const Wrapper = styled.div`
   display:flex:
@@ -59,7 +59,7 @@ export const Wrapper = styled.div`
     color: ${colors.blueGrayLight};
     font-family: 'Archivo Narrow', sans-serif, 'Helvetica', 'Arial', 'sans-serif';
   }
-`;
+`
 
 export const Form = styled.form`
   display: flex;
@@ -116,7 +116,7 @@ export const Form = styled.form`
       border: 1px solid ${colors.primary};
     }
   }
-`;
+`
 
 export const StyledImg = styled(GatsbyImage)`
   max-width: 450px;

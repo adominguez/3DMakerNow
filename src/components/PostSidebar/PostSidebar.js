@@ -1,6 +1,6 @@
-import React from "react"
-import { Link } from "gatsby"
-import { Wrapper, Menu } from "./PostSidebar.styles"
+import React from 'react'
+import { Link } from 'gatsby'
+import { Wrapper, Menu } from './PostSidebar.styles'
 
 const PostSidebar = ({ date, author, categories }) => (
   <Wrapper>
@@ -15,7 +15,7 @@ const PostSidebar = ({ date, author, categories }) => (
         <span>Categories</span>
       </li>
       {categories.map(cat =>
-        cat.slug !== "all-posts" ? (
+        cat.slug !== 'all-posts' ? (
           <li key={cat.id}>
             <Link to={`${cat.uri}`}>
               <span dangerouslySetInnerHTML={{ __html: cat.name }} />
