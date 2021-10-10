@@ -30,7 +30,7 @@ const SearcherCombo = ({
 
   return (
     <Wrapper>
-      <div className="wrapper-content">
+      <div id="searcherCombo" className="wrapper-content">
         <div className="content left-content">
           <HeaderContent
             useAsTitle={useAsTitle}

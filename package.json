@@ -25,6 +25,8 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^5.2.1",
+    "react-slick": "^0.28.1",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.1",
     "typeface-merriweather": "1.1.13",
     "typeface-montserrat": "1.1.13"
@@ -35,7 +37,14 @@
   },
   "homepage": "https://github.com/adominguez/3DMakerNow#readme",
   "keywords": [
-    "3d printer", "impresión 3D", "3d printing", "3d", "3dmakernow", "3dmakernow.com", "impresoras 3D", "filamento 3D"
+    "3d printer",
+    "impresión 3D",
+    "3d printing",
+    "3d",
+    "3dmakernow",
+    "3dmakernow.com",
+    "impresoras 3D",
+    "filamento 3D"
   ],
   "license": "0BSD",
   "main": "n/a",
