@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import { fonts } from '../../theme/fonts'
 
 export const Wrapper = styled.div`
-  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-family: ${fonts.fira};
   font-weight: 600;
   margin: 0 0 20px 0;
 

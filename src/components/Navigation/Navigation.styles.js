@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { colors } from '../../theme/colors'
+import { fonts } from '../../theme/fonts'
 
 export const NavigationWrapper = styled.nav`
-  font-family: 'Teko', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   color: ${colors.secondary};
   font-size: 1rem;
@@ -35,6 +35,8 @@ export const NavigationWrapper = styled.nav`
     position: relative;
 
     a {
+      font-family: ${fonts.fira};
+      font-size: 1rem;
       display: flex;
       padding: 0 0 0 10px;
       transition: all 0.2s ease;

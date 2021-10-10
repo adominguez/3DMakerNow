@@ -1,11 +1,12 @@
 import styled from 'styled-components'
+import { fonts } from '../../theme/fonts'
 
 export const Wrapper = styled.nav`
   display: flex;
   justify-content: space-between;
 
   .navBack {
-    font-family: 'Teko', Arial, Helvetica, sans-serif;
+    font-family: ${fonts.fira};
     font-size: 1rem;
     font-weight: 800;
     color: #fff;
@@ -41,7 +42,7 @@ export const Wrapper = styled.nav`
   }
 
   .navForward {
-    font-family: 'Teko', Arial, Helvetica, sans-serif;
+    font-family: ${fonts.fira};
     font-size: 1rem;
     font-weight: 800;
     color: #fff;

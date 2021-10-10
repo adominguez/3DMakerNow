@@ -1,16 +1,19 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import { colors } from '../../theme/colors'
+import { fonts } from '../../theme/fonts'
 
 export const Primary = styled.main``
 
 export const GlobalStyles = createGlobalStyle`
 {
   html {
-    font-family: 'Archivo Narrow', sans-serif;
+    font-family: ${fonts.archive};
+    font-size: 1.2rem;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
   }
   body {
+    font-family: ${fonts.archive};
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -74,7 +77,7 @@ export const GlobalStyles = createGlobalStyle`
     font-style: italic;
   }
   h1 {
-    font-family: 'Fira Sans', Arial, Helvetica, sans-serif;
+    font-family: ${fonts.fira};
     font-weight: 700;
     font-size: 2em;
     margin: 0.67em 0;
@@ -124,6 +127,7 @@ export const GlobalStyles = createGlobalStyle`
   input,
   optgroup,
   select,
+  option,
   textarea {
     font: inherit;
     margin: 0;
@@ -242,14 +246,14 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   p {
-    font-family: 'Archivo Narrow', Helvetica, sans-serif;
-    font-size: 1.1rem;
+    font-family: ${fonts.archive};
+    font-size: 1.2rem;
     line-height: 1.7rem;
   }
 
   h1 {
     font-size: 2.2rem;
-    font-family: 'Fira Sans', Arial;
+    font-family: ${fonts.fira};
     font-weight: 800;
     letter-spacing: 1px;
     color: ${colors.secondary};
@@ -267,7 +271,7 @@ export const GlobalStyles = createGlobalStyle`
     padding-top: 0;
     margin-bottom: 1.45rem;
     color: inherit;
-    font-family: 'Fira Sans', Arial, Helvetica Neue, sans-serif;
+    font-family: ${fonts.fira};
     font-weight: bold;
     text-rendering: optimizeLegibility;
     font-size: 1.62671rem;
@@ -283,20 +287,20 @@ export const GlobalStyles = createGlobalStyle`
     padding-top: 0;
     margin-bottom: 1.45rem;
     color: inherit;
-    font-family: 'Fira Sans', Arial, Helvetica Neue, sans-serif;
+    font-family: ${fonts.fira};
     font-weight: bold;
     text-rendering: optimizeLegibility;
     font-size: 1.38316rem;
     line-height: 1.1;
   }
   h4 {
-    font-family: Arial;
+    font-family: ${fonts.archive};
     font-weight: 800;
     font-size: 1.2rem;
     letter-spacing: 1px;
   }
   h5 {
-    font-family: 'Archivo Narrow', sans-serif;
+    font-family: ${fonts.archive};
     font-size: 1rem;
     font-style: normal;
     font-variant: normal;
@@ -307,12 +311,21 @@ export const GlobalStyles = createGlobalStyle`
     text-transform: uppercase;
   }
   h6 {
-    font-family: 'Archivo Narrow', sans-serif;
+    font-family: ${fonts.archive};
     font-size: 28px;
     color: ${colors.white};
     font-style: italic;
     margin: 40px 20% 20px 20%;
     line-height: 35px;
+  }
+  label,
+  input,
+  button,
+  a,
+  textarea,
+  select {
+    font-family: ${fonts.archive};
+    font-size: 1.2rem;
   }
   hgroup {
     margin-left: 0;

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { colors } from '../../theme/colors'
+import { fonts } from '../../theme/fonts'
 import { GatsbyImage } from 'gatsby-plugin-image'
 
 export const Wrapper = styled.div`
@@ -34,7 +35,7 @@ export const Wrapper = styled.div`
   }
 
   .wrapper-content .content-message {
-    font-family: 'Pompiere', cursive, sans-serif, 'Helvetica', 'Arial', 'sans-serif';
+    font-family: ${fonts.pompiere};
     border: 1px solid ${colors.white};
     border-radius: 4px;
     padding: 1rem;
@@ -47,7 +48,7 @@ export const Wrapper = styled.div`
     font-weight: 700;
     margin-bottom: 1rem;
     color: ${colors.primary};
-    font-family: 'Archivo Narrow', cursive, sans-serif, 'Helvetica', 'Arial', 'sans-serif';
+    font-family: ;
     text-transform: none;
     font-weight: 400;
     text-align: center;
@@ -60,7 +61,7 @@ export const Wrapper = styled.div`
     font-weight: 400;
     margin-bottom: 1rem;
     color: ${colors.blueGrayLight};
-    font-family: 'Archivo Narrow', sans-serif, 'Helvetica', 'Arial', 'sans-serif';
+    font-family: ${fonts.archive};
   }
 `
 

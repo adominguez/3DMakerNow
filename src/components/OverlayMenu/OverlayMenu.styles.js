@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { colors } from '../../theme/colors'
+import { fonts } from '../../theme/fonts'
 
 export const Overlay = styled.div`
   width: 100%;
@@ -36,7 +37,7 @@ export const Overlay = styled.div`
       margin: 0;
 
       li {
-        margin: 0 0 20px 0;
+        margin: 0 0 1rem 0;
       }
 
       li.overlayActive {
@@ -44,8 +45,8 @@ export const Overlay = styled.div`
       }
 
       a {
-        font-family: 'Teko', Arial, Helvetica, sans-serif;
-        font-size: 2rem;
+        font-family: ${fonts.fira};
+        font-size: 1.5rem;
         color: #fff;
         transition: all 0.3s ease;
         text-decoration: none;
