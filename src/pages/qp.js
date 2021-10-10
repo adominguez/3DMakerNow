@@ -4,7 +4,7 @@ import SearcherCombo from '../components/SearcherCombo/SearcherCombo'
 import styled from 'styled-components'
 import Products from '../components/Products/Products'
 import ErrorMessage from '../components/ErrorMessage/ErrorMessage'
-import { errorMessages, windowGlobal } from '../utils/utils'
+import { errorMessages, windowGlobal } from '../languages/es'
 import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner'
 
 const Wrapper = styled.div`
