@@ -11,6 +11,7 @@ import {
   accesorios,
   postprocesados,
 } from '../../languages/es'
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
 
 const PrinterForm = ({ printerType, changePrinterType }) => (
   <>
@@ -149,6 +150,7 @@ const SearcherForm = ({ handlerChangeProduct }) => {
   const [postprocesado, setPostprocesado] = useState(
     sessionPostprocesado || postprocesados[0]
   )
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     if (product === products[0].value) {
@@ -197,6 +199,7 @@ const SearcherForm = ({ handlerChangeProduct }) => {
         })
       )
     }
+    setIsLoading(false)
   }, [
     product,
     printerType,
@@ -248,6 +251,7 @@ const SearcherForm = ({ handlerChangeProduct }) => {
     `${withPrefix('/')}qp?s=${transformProduct().toLowerCase()}`
 
   return (
+    isLoading ? <LoadingSpinner /> : (
     <Form>
       <label htmlFor="product">{searcherComboTexts.productLabel}</label>
       <select name="product" value={product} onChange={changeProduct}>
@@ -286,7 +290,7 @@ const SearcherForm = ({ handlerChangeProduct }) => {
       <Link to={getUrl()}>
         Ver {products.find(({ value }) => value === product).text}
       </Link>
-    </Form>
+    </Form>)
   )
 }
 
