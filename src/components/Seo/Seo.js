@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-function Seo({ description, lang, meta, keywords, title }) {
+function Seo({ seo, lang, meta }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -25,71 +25,99 @@ function Seo({ description, lang, meta, keywords, title }) {
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const {
+    metaRobotsNoindex,
+    metaRobotsNofollow,
+    opengraphType,
+    title,
+    metaDesc,
+    opengraphDescription,
+    opengraphTitle,
+    twitterTitle,
+    twitterDescription,
+    twitterImage,
+    opengraphImage
+  } = seo || {}
+
+  const getMetarobotsData = () => {
+    if (metaRobotsNoindex && metaRobotsNofollow) {
+      return `${metaRobotsNoindex}, ${metaRobotsNofollow}`
+    }
+    if (metaRobotsNoindex) {
+      return metaRobotsNoindex
+    }
+    if (metaRobotsNofollow) {
+      return metaRobotsNofollow
+    }
+    return undefined
+  }
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={title || site.siteMetadata.title}
       meta={[
         {
+          name: `description`,
+          content: metaDesc || site.siteMetadata.description,
+        },
+        {
+          name: `robots`,
+          content: `${getMetarobotsData() || 'index, follow' }`,
+        },
+        {
           property: `og:title`,
-          content: title,
+          content: opengraphTitle || site.siteMetadata.title,
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: opengraphDescription || site.siteMetadata.description,
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: opengraphType || `website`,
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
+        },
+        {
+          name: `twitter:site`,
+          content: '@3DMakerNow',
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: '@3DMakerNow',
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: twitterTitle || site.siteMetadata.title,
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: twitterDescription || site.siteMetadata.description,
         },
-      ]
-        .concat(
-          keywords.length > 0
-            ? {
-                name: `keywords`,
-                content: keywords.join(`, `),
-              }
-            : []
-        )
-        .concat(meta)}
+        {
+          name: `twitter:image`,
+          content: twitterImage?.mediaItemUrl || opengraphImage?.mediaItemUrl,
+        },
+      ].concat(meta)}
     />
   )
 }
 
 Seo.defaultProps = {
   lang: `es`,
-  meta: [],
-  keywords: [],
-  description: ``,
+  seo: {},
+  meta: []
 }
 
 Seo.propTypes = {
-  description: PropTypes.string,
   lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
+  seo: PropTypes.object.isRequired,
+  meta: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default Seo

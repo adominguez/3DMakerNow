@@ -5,6 +5,7 @@ import Layout from '../components/Layout/Layout'
 import PageHero from '../components/PageHero/PageHero'
 import BreadCrumb from '../components/BreadCrumb/BreadCrumb'
 import PageSidebar from '../components/PageSidebar/PageSidebar'
+import Seo from '../components/SEO/SEO'
 
 const Wrapper = styled.div`
   max-width: 1180px;
@@ -27,6 +28,9 @@ const PageContent = styled.article`
 const PageTemplate = ({ data }) => {
   return (
     <Layout>
+      {
+        data.wpPage.seo && <Seo seo={data.wpPage.seo} />
+      }
       {data.wpPage.featuredImage ? (
         <PageHero
           img={
@@ -37,9 +41,9 @@ const PageTemplate = ({ data }) => {
         />
       ) : null}
       <Wrapper>
-        <BreadCrumb
-          parent={data.wpPage.wpParent && data.wpPage.wpParent.node}
-        />
+        {
+          data.wpPage.seo?.breadcrumbs && <BreadCrumb links={data.wpPage.seo.breadcrumbs} />
+        }
         <ContentWrapper>
           <PageSidebar
             parentChildren={
@@ -104,6 +108,29 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+      }
+      seo {
+        metaRobotsNoindex
+        metaRobotsNofollow
+        opengraphType
+        title
+        metaDesc
+        twitterTitle
+        twitterDescription
+        twitterImage {
+          altText
+          mediaItemUrl
+        }
+        opengraphImage {
+          altText
+          mediaItemUrl
+        }
+        opengraphDescription
+        opengraphTitle
+        breadcrumbs {
+          text
+          url
         }
       }
     }

@@ -15,12 +15,16 @@ import {
   StyledDate,
   StyledReadMore,
 } from './archive.styles'
+import Seo from '../components/SEO/SEO'
 
 const archiveTemplate = ({
   data: { allWpPost },
   pageContext: { catId, catName, catUri, categories, numPages, currentPage },
 }) => (
   <Layout>
+    {
+      allWpPost.seo && <Seo seo={allWpPost.seo} />
+    }
     <StaticImage
       src="../images/archive_headerimage.png"
       placeholder="TRACED_SVG"
@@ -30,10 +34,10 @@ const archiveTemplate = ({
     />
     <Wrapper>
       <BreadCrumb
-        parent={{
-          uri: '/all-posts/',
-          title: 'blog',
-        }}
+        links={[{
+          url: '/all-posts/',
+          text: 'blog',
+        }]}
       />
       <ContentWrapper>
         <ArchiveSidebar catId={catId} categories={categories.edges} />
@@ -82,6 +86,29 @@ export const pageQuery = graphql`
           uri
           slug
           date(formatString: "DD MM YYYY")
+          seo {
+            metaRobotsNoindex
+            metaRobotsNofollow
+            opengraphType
+            title
+            metaDesc
+            twitterTitle
+            twitterDescription
+            twitterImage {
+              altText
+              mediaItemUrl
+            }
+            opengraphImage {
+              altText
+              mediaItemUrl
+            }
+            opengraphDescription
+            opengraphTitle
+            breadcrumbs {
+              text
+              url
+            }
+          }
         }
       }
     }

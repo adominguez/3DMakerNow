@@ -2,21 +2,20 @@ import React from 'react'
 import { Wrapper } from './BreadCrumb.styles'
 import { Link } from 'gatsby'
 
-const BreadCrumb = ({ parent }) => {
+const BreadCrumb = ({ links=[] }) => {
   return (
     <Wrapper>
-      <Link to="/">
-        <span>Home</span>
-      </Link>
-      <span className="divider">/</span>
-      {parent ? (
-        <>
-          <Link to={parent.uri}>
-            <span dangerouslySetInnerHTML={{ __html: parent.title }} />
+      {links?.map((link, index) => (
+        index !== links.length - 1 ?
+        <span key={link.url}>
+          <Link to={link.url}>
+            <span>{link.text.replace('Portada', 'Inicio')}</span>
           </Link>
-          <span className="divider">/</span>
-        </>
-      ) : null}
+          <span className="divider">&nbsp;/&nbsp;</span>
+        </span>
+        :
+        <span key={link.url}>{link.text}</span>
+      ))}
     </Wrapper>
   )
 }

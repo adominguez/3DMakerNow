@@ -1,4 +1,5 @@
 import React from 'react'
+import Seo from '../components/Seo/Seo'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
@@ -25,13 +26,13 @@ const PostContent = styled.article`
 
 const PostTemplate = ({ data }) => (
   <Layout>
+    {
+      data.post.seo && <Seo seo={data.post.seo} />
+    }
     <Wrapper>
-      <BreadCrumb
-        parent={{
-          uri: '/all-posts',
-          title: 'blog',
-        }}
-      />
+      {
+        data.post.seo?.breadcrumb && <BreadCrumb links={data.post.seo.breadcrumbs}/>
+      }
       <ContentWrapper>
         <PostSidebar
           date={data.post.date}
@@ -66,6 +67,29 @@ export const pageQuery = graphql`
           name
           uri
           slug
+        }
+      }
+      seo {
+        metaRobotsNoindex
+        metaRobotsNofollow
+        opengraphType
+        title
+        metaDesc
+        twitterTitle
+        twitterDescription
+        twitterImage {
+          altText
+          mediaItemUrl
+        }
+        opengraphImage {
+          altText
+          mediaItemUrl
+        }
+        opengraphDescription
+        opengraphTitle
+        breadcrumbs {
+          text
+          url
         }
       }
     }
