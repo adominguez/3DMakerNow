@@ -15,7 +15,6 @@ const Wrapper = styled.div`
 
 const ContentWrapper = styled.div`
   display: block;
-
   @media (min-width: 992px) {
     display: flex;
   }
@@ -55,6 +54,9 @@ export const pageQuery = graphql`
     post: wpPost(id: { eq: $id }) {
       title
       content
+      template {
+        templateName
+      }
       author {
         node {
           name

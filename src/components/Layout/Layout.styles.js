@@ -625,5 +625,21 @@ export const GlobalStyles = createGlobalStyle`
       font-size: 100%;
     }
   }
+  .has-text-align-center {
+    text-align: center;
+  }
+
+  .wp-block-columns {
+    display: flex;
+    margin-bottom: 1.45rem;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  .wp-block-column {
+    flex: 1;
+    padding: 0 0.5rem;
+  }
 }
 `

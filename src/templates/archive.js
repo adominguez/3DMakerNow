@@ -6,6 +6,7 @@ import Layout from '../components/Layout/Layout'
 import BreadCrumb from '../components/BreadCrumb/BreadCrumb'
 import ArchiveSidebar from '../components/ArchiveSidebar/ArchiveSidebar'
 import Pagination from '../components/Pagination/Pagination'
+import Seo from '../components/Seo/Seo'
 
 import {
   Wrapper,
@@ -15,7 +16,6 @@ import {
   StyledDate,
   StyledReadMore,
 } from './archive.styles'
-import Seo from '../components/SEO/SEO'
 
 const archiveTemplate = ({
   data: { allWpPost },
