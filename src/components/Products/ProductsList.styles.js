@@ -78,15 +78,15 @@ export const Grid = styled.div`
     }
     &-image {
       position: relative;
-      height: 250px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        margin: 0;
+      }
       @media (max-width: 768px) {
         height: 200px;
-      }
-      .gatsby-image-wrapper {
-        position: initial;
       }
     }
     &-title {
@@ -135,22 +135,24 @@ export const List = styled.div`
       position: relative;
       height: 150px;
       width: 300px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        margin: 0;
+      }
       @media (max-width: 768px) {
         height: 200px;
         width: auto;
-      }
-      .gatsby-image-wrapper {
-        position: initial;
       }
     }
     &-title {
       font-size: 1.2rem;
       font-weight: bold;
       text-align: center;
-      margin: 0.5rem 0.2rem;
+      padding: 0.5rem;
+      box-sizing: border-box;
+      margin: 0;
       @media (max-width: 768px) {
         overflow: hidden;
         display: -webkit-box;
