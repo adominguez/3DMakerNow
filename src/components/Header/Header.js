@@ -13,7 +13,11 @@ const Header = () => {
       <Content>
         <Link to="/">
           <img className="logo" src={Logo} alt={site.siteMetadata.title} />
-          <img className="logo-mobile" src={LogoMovil} alt={site.siteMetadata.title} />
+          <img
+            className="logo-mobile"
+            src={LogoMovil}
+            alt={site.siteMetadata.title}
+          />
         </Link>
         <Navigation menu={wpMenu?.menuItems?.nodes} />
       </Content>

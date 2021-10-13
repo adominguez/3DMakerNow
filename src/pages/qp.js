@@ -40,13 +40,14 @@ const QuickProduct = () => {
         setProductsList(undefined)
         setSearching(true)
         fetch(
-          'https://us-central1-automatic-web-dashboard-back.cloudfunctions.net/app/list-of-products-by-query/' + search.split('s=')[1]
+          'https://us-central1-automatic-web-dashboard-back.cloudfunctions.net/app/list-of-products-by-query/' +
+            search.split('s=')[1]
         )
-          .then((response) => response.json())
-          .then((data) => {
+          .then(response => response.json())
+          .then(data => {
             setProductsList(data)
           })
-          .catch((error) => {
+          .catch(error => {
             setSearchingError(true)
           })
           .finally(() => {
@@ -77,9 +78,7 @@ const QuickProduct = () => {
       <SearcherCombo useAsTitle />
       <Wrapper>
         <ContentWrapper>
-          {searching ? (
-            <LoadingSpinner />
-          ) : null}
+          {searching ? <LoadingSpinner /> : null}
           {searchingError ? (
             <ErrorMessage
               textError={

@@ -22,7 +22,7 @@ export default IndexPage
 
 export const homeQuery = graphql`
   query HomeQuery {
-    wpPage(isFrontPage: {eq: true}) {
+    wpPage(isFrontPage: { eq: true }) {
       seo {
         metaRobotsNoindex
         metaRobotsNofollow

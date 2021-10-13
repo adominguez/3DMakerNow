@@ -25,13 +25,11 @@ const PostContent = styled.article`
 
 const PostTemplate = ({ data }) => (
   <Layout>
-    {
-      data.post.seo && <Seo seo={data.post.seo} />
-    }
+    {data.post.seo && <Seo seo={data.post.seo} />}
     <Wrapper>
-      {
-        data.post.seo?.breadcrumb && <BreadCrumb links={data.post.seo.breadcrumbs}/>
-      }
+      {data.post.seo?.breadcrumb && (
+        <BreadCrumb links={data.post.seo.breadcrumbs} />
+      )}
       <ContentWrapper>
         <PostSidebar
           date={data.post.date}

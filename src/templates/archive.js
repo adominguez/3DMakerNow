@@ -22,9 +22,7 @@ const archiveTemplate = ({
   pageContext: { catId, catName, catUri, categories, numPages, currentPage },
 }) => (
   <Layout>
-    {
-      allWpPost.seo && <Seo seo={allWpPost.seo} />
-    }
+    {allWpPost.seo && <Seo seo={allWpPost.seo} />}
     <StaticImage
       src="../images/archive_headerimage.png"
       placeholder="TRACED_SVG"
@@ -34,10 +32,12 @@ const archiveTemplate = ({
     />
     <Wrapper>
       <BreadCrumb
-        links={[{
-          url: '/all-posts/',
-          text: 'blog',
-        }]}
+        links={[
+          {
+            url: '/all-posts/',
+            text: 'blog',
+          },
+        ]}
       />
       <ContentWrapper>
         <ArchiveSidebar catId={catId} categories={categories.edges} />

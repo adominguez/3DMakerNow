@@ -3,22 +3,16 @@ import React from 'react'
 import ProductsStars from './ProductsStars'
 import { Price } from './ProductsList.styles'
 
-const ProductActionPrice = ({
-  product,
-  hideAmazonRatings,
-  hideAmazonRate,
-}) => {
+const ProductActionPrice = ({ product, hideAmazonRatings, hideAmazonRate }) => {
   return (
     <Price>
-        <span>
-          {product?.Price.replace('.', ',')}
-        </span>
-        <ProductsStars
-          hideAmazonRatings={hideAmazonRatings}
-          hideAmazonRate={hideAmazonRate}
-          amazonRate={product.Rating}
-          amazonRatings={product.TotalReviews}
-        />
+      <span>{product?.Price.replace('.', ',')}</span>
+      <ProductsStars
+        hideAmazonRatings={hideAmazonRatings}
+        hideAmazonRate={hideAmazonRate}
+        amazonRate={product.Rating}
+        amazonRatings={product.TotalReviews}
+      />
     </Price>
   )
 }

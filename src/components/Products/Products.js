@@ -4,11 +4,7 @@ import ProductsGrid from './ProductsGrid'
 import ProductsList from './ProductsList'
 import ProductsCarousel from './ProductsCarousel'
 
-const Products = ({
-  productsList = [],
-  type = 'grid',
-  showToolbar,
-}) => {
+const Products = ({ productsList = [], type = 'grid', showToolbar }) => {
   const [typeList, setTypeList] = useState(type)
   const [order, setOrder] = useState('Por relevancia')
   const [productsListState, setProductsListState] = useState(undefined)
@@ -26,7 +22,7 @@ const Products = ({
     }
   }, [productsList])
 
-  const parseNumber = (str) => {
+  const parseNumber = str => {
     const number = str.replace(' €', '').replace(',', '.')
     if (number.indexOf('.') > -1) {
       return parseFloat(number)
@@ -60,7 +56,16 @@ const Products = ({
 
   return (
     <>
-      {productsList?.length ? showToolbar && <ProductsToolbar typeList={typeList} order={order} handleOrderProducts={setOrder} handleTypeList={setTypeList} /> : null}
+      {productsList?.length
+        ? showToolbar && (
+            <ProductsToolbar
+              typeList={typeList}
+              order={order}
+              handleOrderProducts={setOrder}
+              handleTypeList={setTypeList}
+            />
+          )
+        : null}
       {productsList?.length && typeList === 'grid' ? (
         <ProductsGrid productsList={productsListOrdered()} />
       ) : null}

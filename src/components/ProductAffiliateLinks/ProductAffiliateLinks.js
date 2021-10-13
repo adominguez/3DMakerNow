@@ -5,7 +5,8 @@ const ProductAffiliateLinks = ({ amazonLink, aliexpressLink, customLinks }) => {
   return (
     <Wrapper>
       {amazonLink ? (
-        <a target="_blank"
+        <a
+          target="_blank"
           href={amazonLink}
           rel="noopener noreferrer nofollow"
           className="amazonLink"
@@ -14,7 +15,8 @@ const ProductAffiliateLinks = ({ amazonLink, aliexpressLink, customLinks }) => {
         </a>
       ) : null}
       {aliexpressLink ? (
-        <a target="_blank"
+        <a
+          target="_blank"
           rel="noopener noreferrer nofollow"
           href={aliexpressLink}
           className="aliexpressLink"
@@ -24,17 +26,18 @@ const ProductAffiliateLinks = ({ amazonLink, aliexpressLink, customLinks }) => {
       ) : null}
       {customLinks && customLinks.length
         ? customLinks.map(({ url, store = 'tienda' }, key) =>
-          url ? (
-            <a target="_blank"
-              rel="noopener noreferrer nofollow"
-              key={key}
-              href={url}
-              className="customLink"
-            >
-              Comprar en {store}
-            </a>
-          ) : null
-        )
+            url ? (
+              <a
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                key={key}
+                href={url}
+                className="customLink"
+              >
+                Comprar en {store}
+              </a>
+            ) : null
+          )
         : null}
     </Wrapper>
   )

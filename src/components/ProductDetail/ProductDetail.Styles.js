@@ -3,7 +3,7 @@ import { fonts } from '../../theme/fonts'
 import { colors } from '../../theme/colors'
 
 export const Section = styled.section`
-  background-color: ${props => (props.backgroundColor)};
+  background-color: ${props => props.backgroundColor};
   .container {
     max-width: 1180px;
     margin: 0 auto;
@@ -21,9 +21,9 @@ export const Section = styled.section`
     font-size: 2rem;
     text-align: center;
     font-weight: 400;
-    color: ${props => (props.titleColor)};
+    color: ${props => props.titleColor};
   }
   p {
-    color: ${colors.blueGray}
+    color: ${colors.blueGray};
   }
 `

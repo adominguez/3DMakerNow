@@ -34,9 +34,9 @@ const DefatulPage = ({ data }) => (
       />
     ) : null}
     <Wrapper>
-      {
-        data.wpPage.seo?.breadcrumbs && <BreadCrumb links={data.wpPage.seo.breadcrumbs} />
-      }
+      {data.wpPage.seo?.breadcrumbs && (
+        <BreadCrumb links={data.wpPage.seo.breadcrumbs} />
+      )}
       <ContentWrapper>
         <PageSidebar
           parentChildren={
@@ -56,4 +56,4 @@ const DefatulPage = ({ data }) => (
   </>
 )
 
-export default DefatulPage;
+export default DefatulPage

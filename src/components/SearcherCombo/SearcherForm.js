@@ -250,8 +250,9 @@ const SearcherForm = ({ handlerChangeProduct }) => {
   const getUrl = () =>
     `${withPrefix('/')}qp?s=${transformProduct().toLowerCase()}`
 
-  return (
-    isLoading ? <LoadingSpinner /> : (
+  return isLoading ? (
+    <LoadingSpinner />
+  ) : (
     <Form>
       <label htmlFor="product">{searcherComboTexts.productLabel}</label>
       <select name="product" value={product} onChange={changeProduct}>
@@ -290,7 +291,7 @@ const SearcherForm = ({ handlerChangeProduct }) => {
       <Link to={getUrl()}>
         Ver {products.find(({ value }) => value === product).text}
       </Link>
-    </Form>)
+    </Form>
   )
 }
 

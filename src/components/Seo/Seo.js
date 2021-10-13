@@ -36,7 +36,7 @@ function Seo({ seo, lang, meta }) {
     twitterTitle,
     twitterDescription,
     twitterImage,
-    opengraphImage
+    opengraphImage,
   } = seo || {}
 
   const getMetarobotsData = () => {
@@ -65,7 +65,7 @@ function Seo({ seo, lang, meta }) {
         },
         {
           name: `robots`,
-          content: `${getMetarobotsData() || 'index, follow' }`,
+          content: `${getMetarobotsData() || 'index, follow'}`,
         },
         {
           property: `og:title`,
@@ -111,13 +111,13 @@ function Seo({ seo, lang, meta }) {
 Seo.defaultProps = {
   lang: `es`,
   seo: {},
-  meta: []
+  meta: [],
 }
 
 Seo.propTypes = {
   lang: PropTypes.string,
   seo: PropTypes.object.isRequired,
-  meta: PropTypes.arrayOf(PropTypes.object)
+  meta: PropTypes.arrayOf(PropTypes.object),
 }
 
 export default Seo

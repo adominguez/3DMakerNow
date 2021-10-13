@@ -24,7 +24,7 @@ const ProductsStars = ({
       <div className="stars">
         {!hideAmazonRate &&
           amazonRate &&
-          completeRateNumber.map((rate) => (
+          completeRateNumber.map(rate => (
             <svg
               key={rate}
               fill="#fb923c"
@@ -40,7 +40,7 @@ const ProductsStars = ({
           ))}
         {!hideAmazonRate &&
           amazonRate &&
-          incompleteRateNumber.map((rate) => (
+          incompleteRateNumber.map(rate => (
             <svg
               key={`none-${rate}`}
               fill="none"

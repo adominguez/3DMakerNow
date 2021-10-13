@@ -52,7 +52,7 @@ export const Overlay = styled.div`
         text-decoration: none;
 
         :hover {
-          color: ${colors.primary}
+          color: ${colors.primary};
         }
       }
     }

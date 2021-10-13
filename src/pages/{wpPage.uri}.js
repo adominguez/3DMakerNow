@@ -8,15 +8,12 @@ import DefatulPage from '../components/DefaultPageTemplate/DefaultPageTemplate'
 const PageTemplate = ({ data }) => {
   return (
     <Layout>
-      {
-        data.wpPage.seo && <Seo seo={data.wpPage.seo} />
-      }
-      {
-        data.wpPage?.ACF_Page?.pagetype === 'Impresora' && <PrinterPage data={data} />
-      }
-      {
-        (data.wpPage?.ACF_Page?.pagetype === 'Default' || !data.wpPage.ACF_Page?.pagetype) && <DefatulPage data={data} />
-      }
+      {data.wpPage.seo && <Seo seo={data.wpPage.seo} />}
+      {data.wpPage?.ACF_Page?.pagetype === 'Impresora' && (
+        <PrinterPage data={data} />
+      )}
+      {(data.wpPage?.ACF_Page?.pagetype === 'Default' ||
+        !data.wpPage.ACF_Page?.pagetype) && <DefatulPage data={data} />}
     </Layout>
   )
 }

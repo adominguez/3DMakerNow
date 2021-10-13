@@ -37,13 +37,11 @@ const settings = {
   ],
 }
 
-const ProductsCarousel = ({productsList}) => (
+const ProductsCarousel = ({ productsList }) => (
   <Slider {...settings}>
-    {
-      productsList.map((product) => (
-        <ProductItem product={product} key={product.ASIN} />
-      ))
-    }
+    {productsList.map(product => (
+      <ProductItem product={product} key={product.ASIN} />
+    ))}
   </Slider>
 )
 

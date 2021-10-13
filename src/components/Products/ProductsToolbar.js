@@ -3,7 +3,12 @@ import { colors } from '../../theme/colors'
 import { orderProducts } from '../../languages/es'
 import { Toolbar } from './ProductsList.styles'
 
-const ProductsToolbar = ({ typeList, order, handleOrderProducts, handleTypeList }) => (
+const ProductsToolbar = ({
+  typeList,
+  order,
+  handleOrderProducts,
+  handleTypeList,
+}) => (
   <Toolbar>
     <div className="left-content">
       <button onClick={() => handleTypeList('grid')}>
@@ -56,13 +61,11 @@ const ProductsToolbar = ({ typeList, order, handleOrderProducts, handleTypeList 
       ) : null}
     </div>
     <div className="right-content">
-      <label htmlFor="order">
-        Ordenar por
-      </label>
+      <label htmlFor="order">Ordenar por</label>
       <select
         name="order"
         value={order}
-        onChange={(event) => handleOrderProducts(event.currentTarget.value)}
+        onChange={event => handleOrderProducts(event.currentTarget.value)}
       >
         {orderProducts.map((item, index) => (
           <option key={index} value={item}>

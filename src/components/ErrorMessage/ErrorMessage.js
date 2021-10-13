@@ -22,22 +22,16 @@ const ErrorMessage = ({ textError, type = 'error' }) => {
                 d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            <p className="title-error">
-              {errorMessages.errorTitle}
-            </p>
+            <p className="title-error">{errorMessages.errorTitle}</p>
           </>
         ) : null}
         {type === 'empty' ? (
           <>
-            <p className="empty-error">
-              {errorMessages.noResults}
-            </p>
+            <p className="empty-error">{errorMessages.noResults}</p>
           </>
         ) : null}
       </div>
-      <p>
-        {textError}
-      </p>
+      <p>{textError}</p>
     </Message>
   )
 }
