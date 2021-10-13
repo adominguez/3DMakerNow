@@ -12,10 +12,10 @@ const PageTemplate = ({ data }) => {
         data.wpPage.seo && <Seo seo={data.wpPage.seo} />
       }
       {
-        data.wpPage.PageTemplate.templateName === 'Printer Template' && <PrinterPage data={data} />
+        data.wpPage?.ACF_Page?.pagetype === 'Impresora' && <PrinterPage data={data} />
       }
       {
-        data.wpPage.PageTemplate.templateName === 'Default' && <DefatulPage data={data} />
+        (data.wpPage?.ACF_Page?.pagetype === 'Default' || !data.wpPage.ACF_Page?.pagetype) && <DefatulPage data={data} />
       }
     </Layout>
   )
@@ -30,9 +30,6 @@ export const pageQuery = graphql`
       title
       content
       status
-      template {
-        templateName
-      }
       featuredImage {
         node {
           id
@@ -91,6 +88,35 @@ export const pageQuery = graphql`
         breadcrumbs {
           text
           url
+        }
+      }
+      ACF_Page {
+        printername
+        pagetype
+        aliexpresslink
+        amazonlink
+        customlinks {
+          store
+          url
+        }
+        brand
+        content
+        fieldGroupName
+        printertype
+        printervolume
+        advantagesrepeater {
+          advantageslist
+        }
+        disadvantegesrepeater {
+          disadvantageslist
+        }
+        printerimages {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(width: 450, placeholder: TRACED_SVG)
+            }
+          }
         }
       }
     }

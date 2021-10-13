@@ -1,10 +1,11 @@
 import React from 'react'
+import ProductDetailValoration from '../ProductDetail/ProductDetailValoration';
 
 const PrinterPage = ({ data }) => {
+  const { title, ACF_Page } = data.wpPage
+  const { content, printerimages, aliexpresslink: aliexpressLink, amazonlink: amazonLink, customlinks: customLinks } = ACF_Page || {}
   return (
-    <div>
-      <h1>PrinterPage</h1>
-    </div>
+    <ProductDetailValoration pageTitle={title} content={content || ''} images={printerimages} amazonLink={amazonLink} aliexpressLink={aliexpressLink} customLinks={customLinks} />
   );
 };
 

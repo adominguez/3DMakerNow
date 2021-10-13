@@ -19,4 +19,8 @@ export const colors = {
   red: '#DC2626',
   redLight: '#FF5C5C',
   redDark: '#B80000',
+  amazon: '#ff9900',
+  amazonHover: '#ffb400',
+  aliexpress: '#be123c',
+  aliexpressHover: '#c92650',
 }
