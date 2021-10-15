@@ -6,7 +6,7 @@ export const Wrapper = styled.header`
   border-bottom: 1px solid ${colors.blueGrayLight};
   position: sticky;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
   top: 0;
 `
 

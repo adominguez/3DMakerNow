@@ -96,6 +96,23 @@ export const pageQuery = graphql`
           store
           url
         }
+        compareproductstitle
+        compareproductscontent
+        productstocompare {
+          featurestocompare
+          link
+          name
+          image {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(width: 300, placeholder: TRACED_SVG)
+              }
+            }
+          }
+        }
+        productstocompareproperties {
+          propertyname
+        }
         brand
         content
         fieldGroupName

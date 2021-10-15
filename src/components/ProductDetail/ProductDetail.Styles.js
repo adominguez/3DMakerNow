@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { fonts } from '../../theme/fonts'
 import { colors } from '../../theme/colors'
 
 export const Section = styled.section`

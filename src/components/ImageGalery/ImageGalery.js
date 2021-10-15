@@ -11,21 +11,23 @@ const ImageGalery = ({ images }) => {
     images && images?.length ? images[0] : null
   )
 
+  const handleClick = (image) => setImage(image);
+
   return (
     <ImageGaleryWrapper>
       {images && images.length && (
         <PreviewImage
           image={image?.localFile?.childImageSharp?.gatsbyImageData}
-          alt={image.altText || 'Preview image'}
+          alt={image?.altText || 'Preview image'}
         />
       )}
       <ImageGaleryList>
         {images.map((img, index) => (
           <Thumbnail
             image={img?.localFile?.childImageSharp?.gatsbyImageData}
-            alt={img.altText || 'thumbnail image'}
+            alt={img?.altText || 'thumbnail image'}
             key={index}
-            onClick={() => setImage(img)}
+            onClick={() => handleClick(img)}
           />
         ))}
       </ImageGaleryList>
