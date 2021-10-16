@@ -8,3 +8,5 @@ export const createAmazonUrl = asin =>
 export const capitalize = str => str ? str.charAt(0).toUpperCase() + str.slice(1) : null
 
 export const isOdd = (num) => num % 2
+
+export const convertedKeyProperties = (object) => Object.keys(object || {})

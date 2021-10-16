@@ -30,9 +30,6 @@ export const Section = styled.section`
   p {
     color: ${colors.blueGray};
   }
-  .odd {
-    background-color: ${colors.blueGrayLight};
-  }
 `
 
 export const Comparation = styled.div`
@@ -144,6 +141,9 @@ export const ProductInformation = styled.div`
       color: ${colors.primaryDark};
       text-decoration: underline;
     }
+  }
+  .odd {
+    background-color: ${colors.blueGrayLight};
   }
 `
 

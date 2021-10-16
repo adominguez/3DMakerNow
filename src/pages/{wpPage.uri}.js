@@ -92,6 +92,33 @@ export const pageQuery = graphql`
         pagetype
         aliexpresslink
         amazonlink
+        featurestitle
+        featurescontent
+        technology
+        printervolume
+        layerresolution
+        axisprecision
+        extrusornumber
+        extrusor
+        filamentdiameter
+        nozzlediameter
+        bedlevel
+        printerspeed
+        extrusortemperature
+        bedtemperature
+        materials
+        slicer
+        inputformat
+        firmware
+        display
+        conectivity
+        printersize
+        printerweight
+        unboxingsize
+        unboxingweight
+        input
+        voltage
+        contentprinterlist
         customlinks {
           store
           url
