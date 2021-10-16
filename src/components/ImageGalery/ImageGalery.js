@@ -11,7 +11,7 @@ const ImageGalery = ({ images }) => {
     images && images?.length ? images[0] : null
   )
 
-  const handleClick = (image) => setImage(image);
+  const handleClick = image => setImage(image)
 
   return (
     <ImageGaleryWrapper>

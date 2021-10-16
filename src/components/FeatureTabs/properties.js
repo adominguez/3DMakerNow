@@ -40,17 +40,20 @@ export const matchKeyProperties = {
       printerVolume: {
         title: 'Volumen de impresión',
         icon: printerVolume,
-        info: 'Es el máximo tamaño al que puede imprimir una impresora 3D en largo x ancho x alto y se mide en mm x mm x mm.',
+        info:
+          'Es el máximo tamaño al que puede imprimir una impresora 3D en largo x ancho x alto y se mide en mm x mm x mm.',
       },
       layerResolution: {
         title: 'Resolución de capa',
         icon: printerThickness,
-        info: 'La resolución de capa es <b>la distancia que una impresora 3D permite que haya entre capa y capa de una pieza</b>, a menor distancia, mayor detalle podrá tener la impresión.',
+        info:
+          'La resolución de capa es <b>la distancia que una impresora 3D permite que haya entre capa y capa de una pieza</b>, a menor distancia, mayor detalle podrá tener la impresión.',
       },
       axisPrecision: {
         title: 'Precisión en los ejes',
         icon: accuracy,
-        info: 'Es la exactitud con la que una impresora puede reproducir una pieza sobre los tres ejes.',
+        info:
+          'Es la exactitud con la que una impresora puede reproducir una pieza sobre los tres ejes.',
       },
       extrusorNumber: {
         title: 'Número de extrusores',
@@ -60,37 +63,44 @@ export const matchKeyProperties = {
       extrusor: {
         title: 'Extrusor',
         icon: extrusorType,
-        info: 'Si es extrusor directo o bowden, modelo del extrusor o datos relevantes del mismo.',
+        info:
+          'Si es extrusor directo o bowden, modelo del extrusor o datos relevantes del mismo.',
       },
       filamentDiameter: {
         title: 'Diámetro de filamento',
         icon: filamentDiameter,
-        info: 'Es el <b>diametro que debe tener el filamento que se utilice para imprimir en la impresora</b>, se mide en mm normalmente suele ser de 1,75mm.',
+        info:
+          'Es el <b>diametro que debe tener el filamento que se utilice para imprimir en la impresora</b>, se mide en mm normalmente suele ser de 1,75mm.',
       },
       nozzleDiameterList: {
         title: 'Diámetro del nozzle',
         icon: nozzlePrinterDiameter,
-        info: 'Es el <b>diametro que tiene la boquilla de la impresora</b>, se mide en mm y determina el grosor que va tener el hilo de filamento al salir por la boquilla, lo normal es que tenga 0,4mm.',
+        info:
+          'Es el <b>diametro que tiene la boquilla de la impresora</b>, se mide en mm y determina el grosor que va tener el hilo de filamento al salir por la boquilla, lo normal es que tenga 0,4mm.',
       },
       bedLevel: {
         title: 'Nivelación de la cama',
         icon: level,
-        info: 'Es posible que algunas impresoras tengan nivelación automática de la cama, en caso contrario deberá ser de forma manual.',
+        info:
+          'Es posible que algunas impresoras tengan nivelación automática de la cama, en caso contrario deberá ser de forma manual.',
       },
       printerSpeed: {
         title: 'Velocidad de impresión',
         icon: printingSpeed,
-        info: 'Es la velocidad a la que puede imprimir una impresora 3D y se expresa en mm/s.',
+        info:
+          'Es la velocidad a la que puede imprimir una impresora 3D y se expresa en mm/s.',
       },
       extrusorTemperature: {
         title: 'Temperatura máxima del hotend',
         icon: extrusorTemp,
-        info: 'Máxima temperatura a la que se puede calentar el extrusor, esto es importante ya que <b>algunos materiales necesitan temperaturas muy altas para imprimirlos</b>.',
+        info:
+          'Máxima temperatura a la que se puede calentar el extrusor, esto es importante ya que <b>algunos materiales necesitan temperaturas muy altas para imprimirlos</b>.',
       },
       BedTemperature: {
         title: 'Temperatura máxima de la cama',
         icon: bedTemp,
-        info: 'Temperatura máxima que puede alcanzar la cama caliente, esto es importante ya que <b>algunos materiales necesitan que la cama esté a temperaturas muy altas para imprimirlos</b>.',
+        info:
+          'Temperatura máxima que puede alcanzar la cama caliente, esto es importante ya que <b>algunos materiales necesitan que la cama esté a temperaturas muy altas para imprimirlos</b>.',
       },
       materials: {
         title: 'Materiales soportados',
@@ -105,7 +115,8 @@ export const matchKeyProperties = {
       reelDiameter: {
         title: 'Diámetro del eje',
         icon: accuracy,
-        info: 'Es el hueco interior de plástico de la bobina, es interesante para saber si cabe en el soporte de tu impresora.',
+        info:
+          'Es el hueco interior de plástico de la bobina, es interesante para saber si cabe en el soporte de tu impresora.',
       },
       composition: {
         title: 'Composición',
@@ -120,12 +131,14 @@ export const matchKeyProperties = {
       temperatureRange: {
         title: 'Rango de temperatura',
         icon: extrusorTemp,
-        info: 'Es el rango de temperaturas entre las que se puede imprimir este material.',
+        info:
+          'Es el rango de temperaturas entre las que se puede imprimir este material.',
       },
       optimalTemperature: {
         title: 'Temperatura óptima',
         icon: bedTemp,
-        info: 'Es el rango de temperaturas óptimas entre las que se puede imprimir este material.',
+        info:
+          'Es el rango de temperaturas óptimas entre las que se puede imprimir este material.',
       },
     },
   },
@@ -135,7 +148,8 @@ export const matchKeyProperties = {
       slicer: {
         title: 'Slicer',
         icon: slicer,
-        info: 'Software con el que se pueden ajustar los parámetros para adaptarlos a la impresión.',
+        info:
+          'Software con el que se pueden ajustar los parámetros para adaptarlos a la impresión.',
       },
       inputFormat: {
         title: 'Formatos de entrada',
@@ -145,17 +159,20 @@ export const matchKeyProperties = {
       firmware: {
         title: 'Firmware',
         icon: outputFormat,
-        info: 'El firmware se asemejaría al sistema operativo que lleva la impresora en su placa.',
+        info:
+          'El firmware se asemejaría al sistema operativo que lleva la impresora en su placa.',
       },
       display: {
         title: 'Pantalla',
         icon: lcdDisplay,
-        info: 'Normalmente las impresoras incorporan una pantalla a través de la cual se lleva el control de la impresora.',
+        info:
+          'Normalmente las impresoras incorporan una pantalla a través de la cual se lleva el control de la impresora.',
       },
       conectivity: {
         title: 'Conectividad',
         icon: conectivity,
-        info: 'El método con el que puede conectarse para importar los archivos a la impresora.',
+        info:
+          'El método con el que puede conectarse para importar los archivos a la impresora.',
       },
     },
   },
@@ -190,12 +207,14 @@ export const matchKeyProperties = {
       input: {
         title: 'Capacidad de entrada',
         icon: input,
-        info: 'Es la tensión que acepta la impresora, por lo general <b>suele estar en torno a los 100-240V de corriente alterna, y en torno a 50-60Hz de frecuencia</b>.',
+        info:
+          'Es la tensión que acepta la impresora, por lo general <b>suele estar en torno a los 100-240V de corriente alterna, y en torno a 50-60Hz de frecuencia</b>.',
       },
       voltage: {
         title: 'Voltaje',
         icon: output,
-        info: 'Es el voltaje que necesita la impresora para poder trabajar, se expresa en Voltios (V) y generalmente <b>suele estar en los 12V</b>.',
+        info:
+          'Es el voltaje que necesita la impresora para poder trabajar, se expresa en Voltios (V) y generalmente <b>suele estar en los 12V</b>.',
       },
     },
   },

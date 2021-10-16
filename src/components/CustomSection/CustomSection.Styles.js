@@ -3,7 +3,7 @@ import { colors } from '../../theme/colors'
 
 export const Section = styled.section`
   background-color: ${props => props.backgroundColor || colors.white};
-  color: ${props => props.color || colors.blueGray};
+  color: ${props => props.color || colors.blueGray};
   .block,
   .container {
     max-width: 1180px;

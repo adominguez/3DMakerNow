@@ -26,7 +26,7 @@ export const TabsContainer = styled.div`
     opacity: 0;
     display: block;
     &:hover {
-      cursor: pointer; 
+      cursor: pointer;
     }
   }
   .active {
@@ -55,10 +55,10 @@ export const TabContent = styled.div`
   }
   img {
     width: 1.8rem;
-    margin: 0 .5rem;
+    margin: 0 0.5rem;
   }
   .information {
     width: 1.5rem;
-    margin: 0 .5rem;
+    margin: 0 0.5rem;
   }
 `

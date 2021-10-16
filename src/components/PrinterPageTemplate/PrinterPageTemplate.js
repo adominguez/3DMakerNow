@@ -54,7 +54,7 @@ const PrinterPage = ({ data }) => {
     },
     content: {
       contentPrinterList: ACF_Page.contentprinterlist,
-    }
+    },
   }
 
   return (
@@ -67,17 +67,17 @@ const PrinterPage = ({ data }) => {
         aliexpressLink={aliexpressLink}
         customLinks={customLinks}
       />
-      {productsToCompare?.length > 0 && propertiesToCompare?.length && 
+      {productsToCompare?.length > 0 && propertiesToCompare?.length && (
         <CompareProducts
           productsToCompare={productsToCompare}
           propertiesToCompare={propertiesToCompare}
           compareProductsTitle={compareProductsTitle}
           compareProductsContent={compareProductsContent}
         />
-      }
-      {
-        ACF_Page.featurestitle && ACF_Page.featurescontent  && <FeatureTabs properties={featuresData} />
-      }
+      )}
+      {ACF_Page.featurestitle && ACF_Page.featurescontent && (
+        <FeatureTabs properties={featuresData} />
+      )}
     </>
   )
 }

@@ -86,7 +86,7 @@ export const ProductInformation = styled.div`
   margin-bottom: 0;
   border: 0;
   border-radius: 0;
-  width: ${(props) => props.width};
+  width: ${props => props.width};
   @media (max-width: 768px) {
     width: 100%;
     margin-bottom: 2.5rem;
@@ -99,7 +99,7 @@ export const ProductInformation = styled.div`
     justify-content: center;
     align-items: center;
     height: 12rem;
-    padding: .5rem;
+    padding: 0.5rem;
     text-align: center;
     background-color: ${colors.white};
     border-radius: 5px;
@@ -107,8 +107,8 @@ export const ProductInformation = styled.div`
       border-top-left-radius: 5px;
     }
     .last {
-      border-top-left-radius: .5rem;
-      border-top-right-radius: .5rem;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
     }
   }
   p {
@@ -135,7 +135,7 @@ export const ProductInformation = styled.div`
     font-weight: 700;
     font-size: 1.4rem;
     color: ${colors.primary};
-    border-top: 1px solid ${colors.blueGray};∫
+    border-top: 1px solid ${colors.blueGray};
     &:focus,
     &:hover {
       color: ${colors.primaryDark};

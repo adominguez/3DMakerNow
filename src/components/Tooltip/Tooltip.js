@@ -8,7 +8,6 @@ const Tooltip = ({ children, content, title }) => (
       <div className="body" dangerouslySetInnerHTML={{ __html: content }} />
     </div>
     {children}
-    
   </TooltipContainer>
 )
 

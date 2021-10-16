@@ -1,9 +1,17 @@
 import React from 'react'
 import { Section } from './CustomSection.Styles'
 
-
-const CustomSection = ({children, titleColor, title, color, backgroundColor, content}) => (
-  <Section titleColor={titleColor} backgroundColor={backgroundColor} color={color}>
+const CustomSection = ({
+  children,
+  titleColor,
+  color,
+  backgroundColor,
+}) => (
+  <Section
+    titleColor={titleColor}
+    backgroundColor={backgroundColor}
+    color={color}
+  >
     {children}
   </Section>
 )

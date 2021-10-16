@@ -10,7 +10,7 @@ import { TabsContainer, TabContent } from './Tabs.Styles'
 const Tab = ({ properties, activeTab = 'feature' }) => {
   const data = Object.entries(matchKeyProperties[activeTab].data)
 
-  const renderTechnologyTooltip = (technology) => {
+  const renderTechnologyTooltip = technology => {
     switch (technology) {
       case 'FDM':
         return '<b>Impresora de FDM:</b> es un tipo de impresión por el que <b>la pieza se va realizando capa a capa</b>. El material se va fundiendo a su paso por el extrusor de la impresora y va realizando la pieza.'
@@ -26,14 +26,15 @@ const Tab = ({ properties, activeTab = 'feature' }) => {
       {properties &&
         data.map((item, key) => {
           return item[0] === 'contentPrinterList' ? (
-            <div dangerouslySetInnerHTML={{ __html: properties.contentPrinterList }} />
+            <div
+              dangerouslySetInnerHTML={{
+                __html: properties.contentPrinterList,
+              }}
+            />
           ) : properties[item[0]] ? (
             <div key={key} className="prop-data">
               {item[1].icon ? (
-                <img
-                  src={item[1].icon}
-                  alt={item[1].title}
-                />
+                <img src={item[1].icon} alt={item[1].title} />
               ) : null}
               <b>{item[1].title}</b>:{' '}
               <span className="mr-2">{properties[item[0]]}</span>
@@ -72,27 +73,29 @@ const Tab = ({ properties, activeTab = 'feature' }) => {
 const HeaderTabs = ({ properties, activeTab, setActiveTab }) => (
   <TabsContainer>
     {convertedKeyProperties(properties) &&
-      convertedKeyProperties(properties).filter(
-        (item) => item !== 'sectionContent' && item !== 'title'
-      ).length
+    convertedKeyProperties(properties).filter(
+      item => item !== 'sectionContent' && item !== 'title'
+    ).length
       ? convertedKeyProperties(matchKeyProperties).map((item, key) =>
-        properties[item] ? (
-          <label
-            key={key}
-            htmlFor="property"
-            className={activeTab === item ? 'active' : ''}
-          >
-            <input
-              type="radio"
-              name="property"
-              value={item}
-              checked={activeTab === item}
-              onChange={(e) => setActiveTab(e.currentTarget.value)}
-            />
-            <span className="match-prop">{matchKeyProperties[item].text}</span>
-          </label>
-        ) : null
-      )
+          properties[item] ? (
+            <label
+              key={key}
+              htmlFor="property"
+              className={activeTab === item ? 'active' : ''}
+            >
+              <input
+                type="radio"
+                name="property"
+                value={item}
+                checked={activeTab === item}
+                onChange={e => setActiveTab(e.currentTarget.value)}
+              />
+              <span className="match-prop">
+                {matchKeyProperties[item].text}
+              </span>
+            </label>
+          ) : null
+        )
       : null}
   </TabsContainer>
 )
@@ -101,14 +104,14 @@ const FeatureTabs = ({ properties }) => {
   const initialSelected = properties['feature']
     ? 'feature'
     : properties['software']
-      ? 'software'
-      : properties['unboxing']
-        ? 'unboxing'
-        : properties['electricity']
-          ? 'electricity'
-          : properties['content']
-            ? 'content'
-            : 'feature'
+    ? 'software'
+    : properties['unboxing']
+    ? 'unboxing'
+    : properties['electricity']
+    ? 'electricity'
+    : properties['content']
+    ? 'content'
+    : 'feature'
   const [activeTab, setActiveTab] = useState(initialSelected)
 
   return (
@@ -120,9 +123,16 @@ const FeatureTabs = ({ properties }) => {
     >
       <div className="block">
         <h2>{properties.sectionTitle || 'Características técnicas'}</h2>
-        <div className="body" dangerouslySetInnerHTML={{ __html: properties.sectionContent }} />
+        <div
+          className="body"
+          dangerouslySetInnerHTML={{ __html: properties.sectionContent }}
+        />
         <ContentTabs>
-          <HeaderTabs properties={properties} activeTab={activeTab} setActiveTab={setActiveTab} />
+          <HeaderTabs
+            properties={properties}
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
           <Tab properties={properties[activeTab]} activeTab={activeTab} />
         </ContentTabs>
       </div>
