@@ -2,6 +2,10 @@ import React from 'react'
 import ProductDetailValoration from '../ProductDetail/ProductDetailValoration'
 import CompareProducts from '../CompareProducts/CompareProducts'
 import FeatureTabs from '../FeatureTabs/FeatureTabs'
+import CustomSection from '../CustomSection/CustomSection'
+import { colors } from '../../theme/colors'
+import { Image } from './PrinterPageTemplate.Styles'
+import ProductAffiliateLinks from '../ProductAffiliateLinks/ProductAffiliateLinks'
 
 const PrinterPage = ({ data }) => {
   const { title, ACF_Page } = data.wpPage
@@ -67,6 +71,9 @@ const PrinterPage = ({ data }) => {
         aliexpressLink={aliexpressLink}
         customLinks={customLinks}
       />
+      <CustomSection>
+        <div className="block" dangerouslySetInnerHTML={{ __html: data.wpPage.content }} />
+      </CustomSection>
       {productsToCompare?.length > 0 && propertiesToCompare?.length && (
         <CompareProducts
           productsToCompare={productsToCompare}
@@ -77,6 +84,27 @@ const PrinterPage = ({ data }) => {
       )}
       {ACF_Page.featurestitle && ACF_Page.featurescontent && (
         <FeatureTabs properties={featuresData} />
+      )}
+      {ACF_Page.wherebuytitle && ACF_Page.wherebuycontent && (
+        <CustomSection
+          backgroundColor={colors.white}
+          titleColor={colors.primary}
+          color={colors.blueGray}
+        >
+          <div className="block">
+            <h2>{ACF_Page.wherebuytitle || 'Dónde comprar'}</h2>
+            <div dangerouslySetInnerHTML={{ __html: ACF_Page.wherebuyinitialtext }} />
+            <div className="container">
+              <div className="col">
+                <Image image={ACF_Page.wherebuyimage?.localFile?.childImageSharp?.gatsbyImageData} alt={ACF_Page.wherebuyimage.altText || ACF_Page.wherebuytitle} />
+              </div>
+              <div>
+                <div dangerouslySetInnerHTML={{ __html: ACF_Page.wherebuycontent }} />
+                <ProductAffiliateLinks amazonLink={amazonLink} aliexpressLink={aliexpressLink} customLinks={customLinks}  />
+              </div>
+            </div>
+          </div>
+        </CustomSection>
       )}
     </>
   )

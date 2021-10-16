@@ -159,6 +159,17 @@ export const pageQuery = graphql`
             }
           }
         }
+        wherebuytitle
+        wherebuycontent
+        wherebuyinitialtext
+        wherebuyimage {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(width: 400, placeholder: TRACED_SVG)
+            }
+          }
+        }
       }
     }
   }
