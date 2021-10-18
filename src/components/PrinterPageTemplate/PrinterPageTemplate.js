@@ -5,6 +5,7 @@ import FeatureTabs from '../FeatureTabs/FeatureTabs'
 import CustomSection from '../CustomSection/CustomSection'
 import WhereBuy from '../WhereBuy/WhereBuy'
 import ProductsListSection from '../ProductsListSection/ProductsListSection'
+import AdvantagesDisadvantajes from '../AdvantagesDisadvantajes/AdvantagesDisadvantajes'
 
 const PrinterPage = ({ data }) => {
   const { title, ACF_Page } = data.wpPage
@@ -25,6 +26,10 @@ const PrinterPage = ({ data }) => {
     productslisttitle: productsListTitle,
     productslistinitialtext: productsListInitialText,
     keywordsproductslist: keywordsProductsList,
+    advantagestitle: advantagesTitle,
+    advantagesinitialtext: advantagesInitialText,
+    advantagesrepeater: advantages,
+    disadvantegesrepeater: disadvantages,
   } = ACF_Page || {}
 
   const featuresData = {
@@ -104,6 +109,9 @@ const PrinterPage = ({ data }) => {
       )}
       {
         productsListTitle && productsListInitialText && <ProductsListSection title={productsListTitle} content={productsListInitialText} keywords={keywordsProductsList} />
+      }
+      {
+        (advantages?.length || disadvantages?.length) && <AdvantagesDisadvantajes advantagesDisadvantajes={{advantages, disadvantages}} title={advantagesTitle} initialText={advantagesInitialText} />
       }
     </>
   )

@@ -145,6 +145,8 @@ export const pageQuery = graphql`
         fieldGroupName
         printertype
         printervolume
+        advantagestitle
+        advantagesinitialtext
         advantagesrepeater {
           advantageslist
         }
