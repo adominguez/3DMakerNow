@@ -625,6 +625,52 @@ export const GlobalStyles = createGlobalStyle`
       font-size: 100%;
     }
   }
+
+  .slider-range .ui-state-default:focus, .slider-range .ui-state-default:hover {
+    background-color: #D64000;
+  }
+  
+  .slick-prev {
+    z-index: 5;
+    left: 5px!important;
+  }
+  
+  .slick-next {
+    z-index: 5;
+    right: 5px!important;
+  }
+  
+  .slick-next:before, .slick-prev:before {
+    color: #D64000;
+  }
+
+  .slide-images .slick-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slide-images .slick-list {
+    max-height: 300px;
+    display: flex;
+    align-items: center;
+  }
+
+  .slide-images .slick-track {
+    max-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slide-images .slick-track button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+  }
+
   .has-text-align-center {
     text-align: center;
   }

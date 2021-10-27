@@ -175,6 +175,40 @@ export const pageQuery = graphql`
         productslisttitle
         productslistinitialtext
         keywordsproductslist
+        printersgallerytitle
+        printersgalleryinitialtext
+        printersgalleryimages {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(width: 400, placeholder: TRACED_SVG)
+            }
+          }
+        }
+        featurestext
+        featurestitle
+        features {
+          image
+          link
+          description
+        }
+        conclusiontitle
+        conclusioncontent
+        faqstext
+        faqstitle
+        faqs {
+          question
+          response
+        }
+        calltoactiontext
+        calltoactionimage {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(width: 400, placeholder: TRACED_SVG)
+            }
+          }
+        }
       }
     }
   }

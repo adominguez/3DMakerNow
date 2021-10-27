@@ -6,6 +6,8 @@ import CustomSection from '../CustomSection/CustomSection'
 import WhereBuy from '../WhereBuy/WhereBuy'
 import ProductsListSection from '../ProductsListSection/ProductsListSection'
 import AdvantagesDisadvantajes from '../AdvantagesDisadvantajes/AdvantagesDisadvantajes'
+import SlideImages from '../SlideImages/SlideImages'
+import { UpgradesToPrint } from '../UpgradesToPrint/UpgradesToPrint'
 
 const PrinterPage = ({ data }) => {
   const { title, ACF_Page } = data.wpPage
@@ -30,6 +32,19 @@ const PrinterPage = ({ data }) => {
     advantagesinitialtext: advantagesInitialText,
     advantagesrepeater: advantages,
     disadvantegesrepeater: disadvantages,
+    printersgallerytitle: printersGalleryTitle,
+    printersgalleryinitialtext: printersGalleryInitialText,
+    printersgalleryimages: printersGalleryImages,
+    featurestext: featuresText,
+    featurestitle: featuresTitle,
+    features,
+    conclusiontitle: conclusionTitle,
+    conclusioncontent: conclusionContent,
+    faqstext: faqsText,
+    faqstitle: faqsTitle,
+    calltoactiontext: callToActionText,
+    calltoactionimage: callToActionImage,
+    faqs
   } = ACF_Page || {}
 
   const featuresData = {
@@ -93,9 +108,9 @@ const PrinterPage = ({ data }) => {
           compareProductsContent={compareProductsContent}
         />
       )}
-      {ACF_Page.featurestitle && ACF_Page.featurescontent && (
+      {
         <FeatureTabs properties={featuresData} />
-      )}
+      }
       {whereBuyTitle && whereBuyContent && (
         <WhereBuy 
           title={whereBuyTitle}
@@ -107,12 +122,27 @@ const PrinterPage = ({ data }) => {
           image={whereBuyImage}
         />
       )}
-      {
-        productsListTitle && productsListInitialText && <ProductsListSection title={productsListTitle} content={productsListInitialText} keywords={keywordsProductsList} />
+      {productsListTitle && productsListInitialText && (
+        <ProductsListSection title={productsListTitle} content={productsListInitialText} keywords={keywordsProductsList} />)
       }
-      {
-        (advantages?.length || disadvantages?.length) && <AdvantagesDisadvantajes advantagesDisadvantajes={{advantages, disadvantages}} title={advantagesTitle} initialText={advantagesInitialText} />
-      }
+      {advantages?.length || disadvantages?.length && (
+        <AdvantagesDisadvantajes advantagesDisadvantajes={{advantages, disadvantages}} title={advantagesTitle} initialText={advantagesInitialText} />
+      )}
+      {printersGalleryImages?.length && (
+        <SlideImages title={printersGalleryTitle} initialText={printersGalleryInitialText} images={printersGalleryImages} />
+      )}
+      {features?.length && (
+        <UpgradesToPrint upgrades={features} title={featuresTitle} initialText={featuresText} />
+      )}
+      {faqs?.length && (
+        <>faqs</>
+      )}
+      {conclusionContent && (
+        <div>Conclusión</div>
+      )}
+      {callToActionText && (
+        <div>Call to action</div>
+      )}
     </>
   )
 }
