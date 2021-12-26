@@ -8,6 +8,7 @@ import ProductsListSection from '../ProductsListSection/ProductsListSection'
 import AdvantagesDisadvantajes from '../AdvantagesDisadvantajes/AdvantagesDisadvantajes'
 import SlideImages from '../SlideImages/SlideImages'
 import { UpgradesToPrint } from '../UpgradesToPrint/UpgradesToPrint'
+import Faqs from '../Faqs/Faqs'
 
 const PrinterPage = ({ data }) => {
   const { title, ACF_Page } = data.wpPage
@@ -135,7 +136,7 @@ const PrinterPage = ({ data }) => {
         <UpgradesToPrint upgrades={features} title={featuresTitle} initialText={featuresText} />
       )}
       {faqs?.length && (
-        <>faqs</>
+        <Faqs faqs={faqs} title={faqsTitle} initialText={faqsText} />
       )}
       {conclusionContent && (
         <div>Conclusión</div>
