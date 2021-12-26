@@ -11,7 +11,10 @@ const WhereBuy = ({title, content, amazonLink, aliexpressLink, customLinks, init
     color={colors.blueGray}
   >
     <div className="block">
-      <h2>{title || 'Dónde comprar'}</h2>
+      {
+        title !== 'na' &&
+        <h2>{title || 'Dónde comprar'}</h2>
+      }
       <div dangerouslySetInnerHTML={{ __html: initialText }} />
       <div className="container">
         <div>

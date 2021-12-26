@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ProductDetailValoration from '../ProductDetail/ProductDetailValoration'
 import CompareProducts from '../CompareProducts/CompareProducts'
 import FeatureTabs from '../FeatureTabs/FeatureTabs'
@@ -9,6 +9,13 @@ import AdvantagesDisadvantajes from '../AdvantagesDisadvantajes/AdvantagesDisadv
 import SlideImages from '../SlideImages/SlideImages'
 import { UpgradesToPrint } from '../UpgradesToPrint/UpgradesToPrint'
 import Faqs from '../Faqs/Faqs'
+import Conclusion from '../Conclusion/Conclusion'
+import SearcherCombo from '../SearcherCombo/SearcherCombo'
+
+const page = {
+  title: '¿No te convence esta impresora 3D?',
+  subtitle: 'Elige tus requisitos y encuentra la impresora 3D que necesitas',
+}
 
 const PrinterPage = ({ data }) => {
   const { title, ACF_Page } = data.wpPage
@@ -139,11 +146,19 @@ const PrinterPage = ({ data }) => {
         <Faqs faqs={faqs} title={faqsTitle} initialText={faqsText} />
       )}
       {conclusionContent && (
-        <div>Conclusión</div>
+        <Conclusion title={conclusionTitle} text={conclusionContent} />
       )}
       {callToActionText && (
-        <div>Call to action</div>
+        <WhereBuy 
+          title='na'
+          content={callToActionText}
+          amazonLink={amazonLink}
+          aliexpressLink={aliexpressLink}
+          customLinks={customLinks}
+          image={callToActionImage}
+        />
       )}
+      <SearcherCombo title={page.title} subtitle={page.subtitle} />
     </>
   )
 }
