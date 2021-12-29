@@ -133,9 +133,9 @@ const PrinterPage = ({ data }) => {
       {productsListTitle && productsListInitialText && (
         <ProductsListSection title={productsListTitle} content={productsListInitialText} keywords={keywordsProductsList} />)
       }
-      {advantages?.length || disadvantages?.length && (
+      {!!advantages?.length || !!disadvantages?.length ? (
         <AdvantagesDisadvantajes advantagesDisadvantajes={{advantages, disadvantages}} title={advantagesTitle} initialText={advantagesInitialText} />
-      )}
+      ) : null}
       {printersGalleryImages?.length && (
         <SlideImages title={printersGalleryTitle} initialText={printersGalleryInitialText} images={printersGalleryImages} />
       )}

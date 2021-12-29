@@ -11,14 +11,14 @@ const RenderItem = ({ item, type }) => (
 
 const Block = ({ advantagesDisadvantajes }) => (
   <BlockWrapper>
-    {advantagesDisadvantajes.advantages.length && 
+    {!!advantagesDisadvantajes.advantages.length &&
       <section>
         <h3>Ventajas</h3>
         {advantagesDisadvantajes.advantages.map((item, key) => (
           <RenderItem item={item} key={key} type="advantage" />
         ))}
       </section>}
-    {advantagesDisadvantajes.disadvantages.length &&
+    {!!advantagesDisadvantajes.disadvantages.length &&
       <section>
         <h3>Desventajas</h3>
         {

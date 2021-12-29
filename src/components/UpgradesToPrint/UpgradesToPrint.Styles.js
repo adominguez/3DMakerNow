@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from '../../theme/colors';
 
-export const Item = styled.a`
+export const Item = styled.div`
   padding: 0.5rem;
   a {
     overflow: hidden;

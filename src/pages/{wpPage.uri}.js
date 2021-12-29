@@ -4,16 +4,19 @@ import Layout from '../components/Layout/Layout'
 import Seo from '../components/Seo/Seo'
 import PrinterPage from '../components/PrinterPageTemplate/PrinterPageTemplate'
 import DefatulPage from '../components/DefaultPageTemplate/DefaultPageTemplate'
+import IndexPage from './index'
 
 const PageTemplate = ({ data }) => {
   return (
     <Layout>
       {data.wpPage.seo && <Seo seo={data.wpPage.seo} />}
-      {data.wpPage?.ACF_Page?.pagetype === 'Impresora' && (
-        <PrinterPage data={data} />
-      )}
-      {(data.wpPage?.ACF_Page?.pagetype === 'Default' ||
-        !data.wpPage.ACF_Page?.pagetype) && <DefatulPage data={data} />}
+      {data.wpPage.isFrontPage ? <IndexPage data={data} /> :
+        data.wpPage?.ACF_Page?.pagetype === 'Impresora' ? (
+          <PrinterPage data={data} />
+        ) : null
+        (data.wpPage?.ACF_Page?.pagetype === 'Default' ||
+          !data.wpPage.ACF_Page?.pagetype) ? <DefatulPage data={data} /> : null
+      }
     </Layout>
   )
 }
@@ -26,6 +29,7 @@ export const pageQuery = graphql`
       id
       title
       content
+      isFrontPage
       status
       featuredImage {
         node {
