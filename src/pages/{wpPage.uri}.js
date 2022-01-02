@@ -9,13 +9,13 @@ import IndexPage from './index'
 const PageTemplate = ({ data }) => {
   return (
     <Layout>
-      {data.wpPage.seo && <Seo seo={data.wpPage.seo} />}
-      {data.wpPage.isFrontPage ? <IndexPage data={data} /> :
-        data.wpPage?.ACF_Page?.pagetype === 'Impresora' ? (
+      {data?.wpPage?.seo && <Seo seo={data?.wpPage?.seo} />}
+      {data?.wpPage?.isFrontPage ? <IndexPage data={data} /> :
+        data?.wpPage?.ACF_Page?.pagetype === 'Impresora' ? (
           <PrinterPage data={data} />
-        ) : null
-        (data.wpPage?.ACF_Page?.pagetype === 'Default' ||
-          !data.wpPage?.ACF_Page?.pagetype) ? <DefatulPage data={data} /> : null
+        ) : <></>}
+      {(data?.wpPage?.ACF_Page?.pagetype === 'Default' ||
+        !data?.wpPage?.ACF_Page?.pagetype) ? <DefatulPage data={data} /> : <></>
       }
     </Layout>
   )
