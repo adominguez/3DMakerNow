@@ -15,7 +15,7 @@ const PageTemplate = ({ data }) => {
           <PrinterPage data={data} />
         ) : null
         (data.wpPage?.ACF_Page?.pagetype === 'Default' ||
-          !data.wpPage.ACF_Page?.pagetype) ? <DefatulPage data={data} /> : null
+          !data.wpPage?.ACF_Page?.pagetype) ? <DefatulPage data={data} /> : null
       }
     </Layout>
   )

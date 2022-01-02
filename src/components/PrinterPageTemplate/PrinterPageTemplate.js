@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import ProductDetailValoration from '../ProductDetail/ProductDetailValoration'
 import CompareProducts from '../CompareProducts/CompareProducts'
 import FeatureTabs from '../FeatureTabs/FeatureTabs'
@@ -56,42 +56,42 @@ const PrinterPage = ({ data }) => {
   } = ACF_Page || {}
 
   const featuresData = {
-    sectionContent: ACF_Page.featurescontent,
-    sectionTitle: ACF_Page.featurestitle,
+    sectionContent: ACF_Page?.featurescontent,
+    sectionTitle: ACF_Page?.featurestitle,
     feature: {
-      technology: ACF_Page.technology,
-      printerVolume: ACF_Page.printervolume,
-      layerResolution: ACF_Page.layerresolution,
-      axisPrecision: ACF_Page.axisprecision,
-      extrusorNumber: ACF_Page.extrusornumber,
-      extrusor: ACF_Page.extrusor,
-      filamentDiameter: ACF_Page.filamentdiameter,
-      nozzleDiameter: ACF_Page.nozzlediameter,
-      bedLevel: ACF_Page.bedlevel,
-      printerSpeed: ACF_Page.printerspeed,
-      extruderTemperature: ACF_Page.extrudertemperature,
-      bedTemperature: ACF_Page.bedtemperature,
-      materials: ACF_Page.materials,
+      technology: ACF_Page?.technology,
+      printerVolume: ACF_Page?.printervolume,
+      layerResolution: ACF_Page?.layerresolution,
+      axisPrecision: ACF_Page?.axisprecision,
+      extrusorNumber: ACF_Page?.extrusornumber,
+      extrusor: ACF_Page?.extrusor,
+      filamentDiameter: ACF_Page?.filamentdiameter,
+      nozzleDiameter: ACF_Page?.nozzlediameter,
+      bedLevel: ACF_Page?.bedlevel,
+      printerSpeed: ACF_Page?.printerspeed,
+      extruderTemperature: ACF_Page?.extrudertemperature,
+      bedTemperature: ACF_Page?.bedtemperature,
+      materials: ACF_Page?.materials,
     },
     software: {
-      slicer: ACF_Page.slicer,
-      inputFormat: ACF_Page.inputformat,
-      firmware: ACF_Page.firmware,
-      display: ACF_Page.display,
-      conectivity: ACF_Page.conectivity,
+      slicer: ACF_Page?.slicer,
+      inputFormat: ACF_Page?.inputformat,
+      firmware: ACF_Page?.firmware,
+      display: ACF_Page?.display,
+      conectivity: ACF_Page?.conectivity,
     },
     unboxing: {
-      unboxingSize: ACF_Page.unboxingsize,
-      unboxingWeight: ACF_Page.unboxingweight,
-      printerSize: ACF_Page.printersize,
-      printerWeight: ACF_Page.printerweight,
+      unboxingSize: ACF_Page?.unboxingsize,
+      unboxingWeight: ACF_Page?.unboxingweight,
+      printerSize: ACF_Page?.printersize,
+      printerWeight: ACF_Page?.printerweight,
     },
     electricity: {
-      voltage: ACF_Page.voltage,
-      input: ACF_Page.input,
+      voltage: ACF_Page?.voltage,
+      input: ACF_Page?.input,
     },
     content: {
-      contentPrinterList: ACF_Page.contentprinterlist,
+      contentPrinterList: ACF_Page?.contentprinterlist,
     },
   }
 
